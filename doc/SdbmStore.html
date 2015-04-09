@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class SdbmStore - TeensyMUD 3.0.0 Mud Server</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/storage/sdbmstore.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Store.html">Store</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-check">#check</a>
+    
+    <li><a href="#method-i-close">#close</a>
+    
+    <li><a href="#method-i-delete">#delete</a>
+    
+    <li><a href="#method-i-each">#each</a>
+    
+    <li><a href="#method-i-get">#get</a>
+    
+    <li><a href="#method-i-inspect">#inspect</a>
+    
+    <li><a href="#method-i-makenoswap">#makenoswap</a>
+    
+    <li><a href="#method-i-makeswap">#makeswap</a>
+    
+    <li><a href="#method-i-mark">#mark</a>
+    
+    <li><a href="#method-i-put">#put</a>
+    
+    <li><a href="#method-i-save">#save</a>
+    
+    <li><a href="#method-i-stats">#stats</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+    <li class="file"><a href="./TML.html">TML</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Farts.html">Farts</a>
+  
+    <li><a href="./Farts/AttributeSyntaxNode.html">Farts::AttributeSyntaxNode</a>
+  
+    <li><a href="./Farts/CallSyntaxNode.html">Farts::CallSyntaxNode</a>
+  
+    <li><a href="./Farts/CommandSyntaxNode.html">Farts::CommandSyntaxNode</a>
+  
+    <li><a href="./Farts/CommentSyntaxNode.html">Farts::CommentSyntaxNode</a>
+  
+    <li><a href="./Farts/EndSyntaxNode.html">Farts::EndSyntaxNode</a>
+  
+    <li><a href="./Farts/IfSyntaxNode.html">Farts::IfSyntaxNode</a>
+  
+    <li><a href="./Farts/Interpreter.html">Farts::Interpreter</a>
+  
+    <li><a href="./Farts/Lexer.html">Farts::Lexer</a>
+  
+    <li><a href="./Farts/Lib.html">Farts::Lib</a>
+  
+    <li><a href="./Farts/LiteralSyntaxNode.html">Farts::LiteralSyntaxNode</a>
+  
+    <li><a href="./Farts/LocalVarSyntaxNode.html">Farts::LocalVarSyntaxNode</a>
+  
+    <li><a href="./Farts/Parser.html">Farts::Parser</a>
+  
+    <li><a href="./Farts/ProgramSyntaxNode.html">Farts::ProgramSyntaxNode</a>
+  
+    <li><a href="./Farts/SyntaxNode.html">Farts::SyntaxNode</a>
+  
+    <li><a href="./SQLite.html">SQLite</a>
+  
+    <li><a href="./SQLite3.html">SQLite3</a>
+  
+    <li><a href="./SQLite3/Database.html">SQLite3::Database</a>
+  
+    <li><a href="./SQLite/Database.html">SQLite::Database</a>
+  
+    <li><a href="./TernaryTrie.html">TernaryTrie</a>
+  
+    <li><a href="./TernaryTrie/TNode.html">TernaryTrie::TNode</a>
+  
+    <li><a href="./ASCIICodes.html">ASCIICodes</a>
+  
+    <li><a href="./Acceptor.html">Acceptor</a>
+  
+    <li><a href="./Account.html">Account</a>
+  
+    <li><a href="./BoolExpParser.html">BoolExpParser</a>
+  
+    <li><a href="./CacheEntry.html">CacheEntry</a>
+  
+    <li><a href="./CacheManager.html">CacheManager</a>
+  
+    <li><a href="./CacheStats.html">CacheStats</a>
+  
+    <li><a href="./Character.html">Character</a>
+  
+    <li><a href="./Client.html">Client</a>
+  
+    <li><a href="./Cmd.html">Cmd</a>
+  
+    <li><a href="./ColorFilter.html">ColorFilter</a>
+  
+    <li><a href="./Command.html">Command</a>
+  
+    <li><a href="./Configuration.html">Configuration</a>
+  
+    <li><a href="./Connection.html">Connection</a>
+  
+    <li><a href="./Connector.html">Connector</a>
+  
+    <li><a href="./ConsoleClient.html">ConsoleClient</a>
+  
+    <li><a href="./CursesClient.html">CursesClient</a>
+  
+    <li><a href="./DbmStore.html">DbmStore</a>
+  
+    <li><a href="./DebugFilter.html">DebugFilter</a>
+  
+    <li><a href="./Dumper.html">Dumper</a>
+  
+    <li><a href="./Engine.html">Engine</a>
+  
+    <li><a href="./Event.html">Event</a>
+  
+    <li><a href="./EventManager.html">EventManager</a>
+  
+    <li><a href="./Exit.html">Exit</a>
+  
+    <li><a href="./Filter.html">Filter</a>
+  
+    <li><a href="./GameObject.html">GameObject</a>
+  
+    <li><a href="./GdbmStore.html">GdbmStore</a>
+  
+    <li><a href="./LineIO.html">LineIO</a>
+  
+    <li><a href="./Loader.html">Loader</a>
+  
+    <li><a href="./Log.html">Log</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Obj.html">Obj</a>
+  
+    <li><a href="./ObjCmd.html">ObjCmd</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./PacketIO.html">PacketIO</a>
+  
+    <li><a href="./ProtocolStack.html">ProtocolStack</a>
+  
+    <li><a href="./Publisher.html">Publisher</a>
+  
+    <li><a href="./Reactor.html">Reactor</a>
+  
+    <li><a href="./Room.html">Room</a>
+  
+    <li><a href="./Root.html">Root</a>
+  
+    <li><a href="./Script.html">Script</a>
+  
+    <li><a href="./SdbmStore.html">SdbmStore</a>
+  
+    <li><a href="./Session.html">Session</a>
+  
+    <li><a href="./SockIO.html">SockIO</a>
+  
+    <li><a href="./Sqlite3Store.html">Sqlite3Store</a>
+  
+    <li><a href="./SqliteStore.html">SqliteStore</a>
+  
+    <li><a href="./Store.html">Store</a>
+  
+    <li><a href="./String.html">String</a>
+  
+    <li><a href="./TelnetCodes.html">TelnetCodes</a>
+  
+    <li><a href="./TelnetFilter.html">TelnetFilter</a>
+  
+    <li><a href="./TerminalFilter.html">TerminalFilter</a>
+  
+    <li><a href="./Timer.html">Timer</a>
+  
+    <li><a href="./Utility.html">Utility</a>
+  
+    <li><a href="./VT100Codes.html">VT100Codes</a>
+  
+    <li><a href="./World.html">World</a>
+  
+    <li><a href="./XmlStore.html">XmlStore</a>
+  
+    <li><a href="./YamlStore.html">YamlStore</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class SdbmStore</h1>
+
+  <div id="description" class="description">
+    
+<p>The <a href="SdbmStore.html">SdbmStore</a> class manages access to all
+object storage.</p>
+<dl class="rdoc-list label-list"><dt><code>db</code>
+<dd>
+<p>is a handle to the database.</p>
+</dd><dt><code>dbtop</code>
+<dd>
+<p>stores the highest id used in the database.</p>
+</dd><dt><code>cache</code>
+<dd>
+<p>is a handle to the cache</p>
+</dd></dl>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(dbfile)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/storage/sdbmstore.rb, line 29</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">dbfile</span>)
+    <span class="ruby-keyword">super</span>()
+    <span class="ruby-ivar">@dbfile</span> = <span class="ruby-node">&quot;#{dbfile}&quot;</span>
+
+    <span class="ruby-comment"># check if database exists and build it if not</span>
+    <span class="ruby-identifier">build_database</span>
+    <span class="ruby-identifier">log</span>.<span class="ruby-identifier">info</span> <span class="ruby-string">&quot;Loading world...&quot;</span>
+
+    <span class="ruby-comment"># open database and sets @dbtop to highest object id</span>
+    <span class="ruby-ivar">@db</span> = <span class="ruby-constant">SDBM</span>.<span class="ruby-identifier">open</span>(<span class="ruby-ivar">@dbfile</span>, <span class="ruby-value">0666</span>)
+    <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">each_key</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@dbtop</span> = <span class="ruby-identifier">o</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@dbtop</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-ivar">@cache</span> = <span class="ruby-constant">CacheManager</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@db</span>)
+    <span class="ruby-identifier">log</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Database '#{@dbfile}' loaded...highest id = #{@dbtop}.&quot;</span>
+<span class="ruby-comment">#    log.debug @db.inspect</span>
+  <span class="ruby-keyword">rescue</span>
+    <span class="ruby-identifier">log</span>.<span class="ruby-identifier">fatal</span> <span class="ruby-identifier">$!</span>
+    <span class="ruby-identifier">raise</span>
+  <span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-check" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check</span><span
+            class="method-args">(oid)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Check if an object is in the database by its id.</p>
+<dl class="rdoc-list label-list"><dt><code>oid</code>
+<dd>
+<p>is the id to use in the search.</p>
+</dd><dt><code>return</code>
+<dd>
+<p>true or false</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="check-source">
+            <pre><span class="ruby-comment"># File lib/storage/sdbmstore.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check</span>(<span class="ruby-identifier">oid</span>)
+  <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">oid</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check-method -->
+
+    
+      <div id="method-i-close" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">close</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Close the database</p>
+<dl class="rdoc-list label-list"><dt><code>return</code>
+<dd>
+<p>Undefined.</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="close-source">
+            <pre><span class="ruby-comment"># File lib/storage/sdbmstore.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">close</span>
+  <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">close</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- close-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- close-method -->
+
+    
+      <div id="method-i-delete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete</span><span
+            class="method-args">(oid)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Deletes an object from the database.</p>
+<dl class="rdoc-list label-list"><dt><code>oid</code>
+<dd>
+<p>is the id to to be deleted.</p>
+</dd><dt><code>return</code>
+<dd>
+<p>Undefined.</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="delete-source">
+            <pre><span class="ruby-comment"># File lib/storage/sdbmstore.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">oid</span>)
+  <span class="ruby-ivar">@cache</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">oid</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete-method -->
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">() { |get| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Iterate through all objects This needs to have all the possible keys first.
+So we need to fetch them from the cache and from the database and and
+produce a list of unique keys.</p>
+<dl class="rdoc-list label-list"><dt><code>yield</code>
+<dd>
+<p>Each object in database to block of caller.</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/storage/sdbmstore.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each</span>
+  <span class="ruby-identifier">kys</span> = <span class="ruby-ivar">@cache</span>.<span class="ruby-identifier">keys</span>
+  <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">each_key</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">kys</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_i</span>}
+  <span class="ruby-identifier">kys</span>.<span class="ruby-identifier">uniq!</span>
+  <span class="ruby-identifier">kys</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span> <span class="ruby-ivar">@cache</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">k</span>)}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each-method -->
+
+    
+      <div id="method-i-get" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get</span><span
+            class="method-args">(oid)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds an object in the database by its id.</p>
+<dl class="rdoc-list label-list"><dt><code>oid</code>
+<dd>
+<p>is the id to use in the search.</p>
+</dd><dt><code>return</code>
+<dd>
+<p>Handle to the object or nil.</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="get-source">
+            <pre><span class="ruby-comment"># File lib/storage/sdbmstore.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get</span>(<span class="ruby-identifier">oid</span>)
+  <span class="ruby-ivar">@cache</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">oid</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get-method -->
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>inspect the store cache (only for caches)</p>
+<dl class="rdoc-list label-list"><dt><code>return</code>
+<dd>
+<p>string</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/storage/sdbmstore.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect</span>
+  <span class="ruby-ivar">@cache</span>.<span class="ruby-identifier">inspect</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inspect-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inspect-method -->
+
+    
+      <div id="method-i-makenoswap" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">makenoswap</span><span
+            class="method-args">(oid)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Marks an object nonswappable</p>
+<dl class="rdoc-list label-list"><dt><code>oid</code>
+<dd>
+<p>is the object id</p>
+</dd><dt><code>return</code>
+<dd>
+<p>undefined</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="makenoswap-source">
+            <pre><span class="ruby-comment"># File lib/storage/sdbmstore.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">makenoswap</span>(<span class="ruby-identifier">oid</span>)
+  <span class="ruby-ivar">@cache</span>.<span class="ruby-identifier">makenoswap</span>(<span class="ruby-identifier">oid</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- makenoswap-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- makenoswap-method -->
+
+    
+      <div id="method-i-makeswap" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">makeswap</span><span
+            class="method-args">(oid)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Marks an object swappable</p>
+<dl class="rdoc-list label-list"><dt><code>oid</code>
+<dd>
+<p>is the object id</p>
+</dd><dt><code>return</code>
+<dd>
+<p>undefined</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="makeswap-source">
+            <pre><span class="ruby-comment"># File lib/storage/sdbmstore.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">makeswap</span>(<span class="ruby-identifier">oid</span>)
+  <span class="ruby-ivar">@cache</span>.<span class="ruby-identifier">makeswap</span>(<span class="ruby-identifier">oid</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- makeswap-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- makeswap-method -->
+
+    
+      <div id="method-i-mark" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mark</span><span
+            class="method-args">(oid)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Marks an object dirty</p>
+<dl class="rdoc-list label-list"><dt><code>oid</code>
+<dd>
+<p>is the id to use in the search.</p>
+</dd><dt><code>return</code>
+<dd>
+<p>undefined</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="mark-source">
+            <pre><span class="ruby-comment"># File lib/storage/sdbmstore.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mark</span>(<span class="ruby-identifier">oid</span>)
+  <span class="ruby-ivar">@cache</span>.<span class="ruby-identifier">mark</span>(<span class="ruby-identifier">oid</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mark-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mark-method -->
+
+    
+      <div id="method-i-put" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">put</span><span
+            class="method-args">(obj)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds a new object to the database.</p>
+<dl class="rdoc-list label-list"><dt><code>obj</code>
+<dd>
+<p>is a reference to object to be added</p>
+</dd><dt><code>return</code>
+<dd>
+<p>Undefined.</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="put-source">
+            <pre><span class="ruby-comment"># File lib/storage/sdbmstore.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">put</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-ivar">@cache</span>.<span class="ruby-identifier">put</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-identifier">obj</span> <span class="ruby-comment"># return really should not be checked</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- put-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- put-method -->
+
+    
+      <div id="method-i-save" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">save</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Save the world</p>
+<dl class="rdoc-list label-list"><dt><code>return</code>
+<dd>
+<p>Undefined.</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="save-source">
+            <pre><span class="ruby-comment"># File lib/storage/sdbmstore.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">save</span>
+  <span class="ruby-ivar">@cache</span>.<span class="ruby-identifier">sync</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- save-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- save-method -->
+
+    
+      <div id="method-i-stats" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stats</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>produces a statistical report of the database</p>
+<dl class="rdoc-list label-list"><dt><code>return</code>
+<dd>
+<p>a string containing the report</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="stats-source">
+            <pre><span class="ruby-comment"># File lib/storage/sdbmstore.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stats</span>
+  <span class="ruby-identifier">stats</span> = <span class="ruby-keyword">super</span>
+  <span class="ruby-identifier">stats</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@cache</span>.<span class="ruby-identifier">stats</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- stats-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- stats-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

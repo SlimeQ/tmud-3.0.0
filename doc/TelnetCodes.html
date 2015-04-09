@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module TelnetCodes - TeensyMUD 3.0.0 Mud Server</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/network/protocol/telnetcodes.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+    <li class="file"><a href="./TML.html">TML</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Farts.html">Farts</a>
+  
+    <li><a href="./Farts/AttributeSyntaxNode.html">Farts::AttributeSyntaxNode</a>
+  
+    <li><a href="./Farts/CallSyntaxNode.html">Farts::CallSyntaxNode</a>
+  
+    <li><a href="./Farts/CommandSyntaxNode.html">Farts::CommandSyntaxNode</a>
+  
+    <li><a href="./Farts/CommentSyntaxNode.html">Farts::CommentSyntaxNode</a>
+  
+    <li><a href="./Farts/EndSyntaxNode.html">Farts::EndSyntaxNode</a>
+  
+    <li><a href="./Farts/IfSyntaxNode.html">Farts::IfSyntaxNode</a>
+  
+    <li><a href="./Farts/Interpreter.html">Farts::Interpreter</a>
+  
+    <li><a href="./Farts/Lexer.html">Farts::Lexer</a>
+  
+    <li><a href="./Farts/Lib.html">Farts::Lib</a>
+  
+    <li><a href="./Farts/LiteralSyntaxNode.html">Farts::LiteralSyntaxNode</a>
+  
+    <li><a href="./Farts/LocalVarSyntaxNode.html">Farts::LocalVarSyntaxNode</a>
+  
+    <li><a href="./Farts/Parser.html">Farts::Parser</a>
+  
+    <li><a href="./Farts/ProgramSyntaxNode.html">Farts::ProgramSyntaxNode</a>
+  
+    <li><a href="./Farts/SyntaxNode.html">Farts::SyntaxNode</a>
+  
+    <li><a href="./SQLite.html">SQLite</a>
+  
+    <li><a href="./SQLite3.html">SQLite3</a>
+  
+    <li><a href="./SQLite3/Database.html">SQLite3::Database</a>
+  
+    <li><a href="./SQLite/Database.html">SQLite::Database</a>
+  
+    <li><a href="./TernaryTrie.html">TernaryTrie</a>
+  
+    <li><a href="./TernaryTrie/TNode.html">TernaryTrie::TNode</a>
+  
+    <li><a href="./ASCIICodes.html">ASCIICodes</a>
+  
+    <li><a href="./Acceptor.html">Acceptor</a>
+  
+    <li><a href="./Account.html">Account</a>
+  
+    <li><a href="./BoolExpParser.html">BoolExpParser</a>
+  
+    <li><a href="./CacheEntry.html">CacheEntry</a>
+  
+    <li><a href="./CacheManager.html">CacheManager</a>
+  
+    <li><a href="./CacheStats.html">CacheStats</a>
+  
+    <li><a href="./Character.html">Character</a>
+  
+    <li><a href="./Client.html">Client</a>
+  
+    <li><a href="./Cmd.html">Cmd</a>
+  
+    <li><a href="./ColorFilter.html">ColorFilter</a>
+  
+    <li><a href="./Command.html">Command</a>
+  
+    <li><a href="./Configuration.html">Configuration</a>
+  
+    <li><a href="./Connection.html">Connection</a>
+  
+    <li><a href="./Connector.html">Connector</a>
+  
+    <li><a href="./ConsoleClient.html">ConsoleClient</a>
+  
+    <li><a href="./CursesClient.html">CursesClient</a>
+  
+    <li><a href="./DbmStore.html">DbmStore</a>
+  
+    <li><a href="./DebugFilter.html">DebugFilter</a>
+  
+    <li><a href="./Dumper.html">Dumper</a>
+  
+    <li><a href="./Engine.html">Engine</a>
+  
+    <li><a href="./Event.html">Event</a>
+  
+    <li><a href="./EventManager.html">EventManager</a>
+  
+    <li><a href="./Exit.html">Exit</a>
+  
+    <li><a href="./Filter.html">Filter</a>
+  
+    <li><a href="./GameObject.html">GameObject</a>
+  
+    <li><a href="./GdbmStore.html">GdbmStore</a>
+  
+    <li><a href="./LineIO.html">LineIO</a>
+  
+    <li><a href="./Loader.html">Loader</a>
+  
+    <li><a href="./Log.html">Log</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Obj.html">Obj</a>
+  
+    <li><a href="./ObjCmd.html">ObjCmd</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./PacketIO.html">PacketIO</a>
+  
+    <li><a href="./ProtocolStack.html">ProtocolStack</a>
+  
+    <li><a href="./Publisher.html">Publisher</a>
+  
+    <li><a href="./Reactor.html">Reactor</a>
+  
+    <li><a href="./Room.html">Room</a>
+  
+    <li><a href="./Root.html">Root</a>
+  
+    <li><a href="./Script.html">Script</a>
+  
+    <li><a href="./SdbmStore.html">SdbmStore</a>
+  
+    <li><a href="./Session.html">Session</a>
+  
+    <li><a href="./SockIO.html">SockIO</a>
+  
+    <li><a href="./Sqlite3Store.html">Sqlite3Store</a>
+  
+    <li><a href="./SqliteStore.html">SqliteStore</a>
+  
+    <li><a href="./Store.html">Store</a>
+  
+    <li><a href="./String.html">String</a>
+  
+    <li><a href="./TelnetCodes.html">TelnetCodes</a>
+  
+    <li><a href="./TelnetFilter.html">TelnetFilter</a>
+  
+    <li><a href="./TerminalFilter.html">TerminalFilter</a>
+  
+    <li><a href="./Timer.html">Timer</a>
+  
+    <li><a href="./Utility.html">Utility</a>
+  
+    <li><a href="./VT100Codes.html">VT100Codes</a>
+  
+    <li><a href="./World.html">World</a>
+  
+    <li><a href="./XmlStore.html">XmlStore</a>
+  
+    <li><a href="./YamlStore.html">YamlStore</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module TelnetCodes</h1>
+
+  <div id="description" class="description">
+    
+<p>This module contains the contants used for Telnet</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="AARD">AARD
+        
+        <dd class="description">
+        
+      
+        <dt id="ABORT">ABORT
+        
+        <dd class="description">
+        
+      
+        <dt id="AO">AO
+        
+        <dd class="description">
+        
+      
+        <dt id="ATCP">ATCP
+        
+        <dd class="description">
+        
+      
+        <dt id="AUTHENTICATION">AUTHENTICATION
+        
+        <dd class="description">
+        
+      
+        <dt id="AYT">AYT
+        
+        <dd class="description"><p>In RFC 854</p>
+        
+      
+        <dt id="BINARY">BINARY
+        
+        <dd class="description"><p>Options</p>
+        
+      
+        <dt id="BM">BM
+        
+        <dd class="description">
+        
+      
+        <dt id="BRK">BRK
+        
+        <dd class="description">
+        
+      
+        <dt id="CHARSET">CHARSET
+        
+        <dd class="description">
+        
+      
+        <dt id="COMPRESS">COMPRESS
+        
+        <dd class="description">
+        
+      
+        <dt id="COMPRESS2">COMPRESS2
+        
+        <dd class="description">
+        
+      
+        <dt id="CPCO">CPCO
+        
+        <dd class="description">
+        
+      
+        <dt id="DET">DET
+        
+        <dd class="description">
+        
+      
+        <dt id="DM">DM
+        
+        <dd class="description">
+        
+      
+        <dt id="DO">DO
+        
+        <dd class="description">
+        
+      
+        <dt id="DONT">DONT
+        
+        <dd class="description">
+        
+      
+        <dt id="EC">EC
+        
+        <dd class="description">
+        
+      
+        <dt id="ECHO">ECHO
+        
+        <dd class="description">
+        
+      
+        <dt id="EL">EL
+        
+        <dd class="description">
+        
+      
+        <dt id="ENCRYPT">ENCRYPT
+        
+        <dd class="description">
+        
+      
+        <dt id="ENVIRON">ENVIRON
+        
+        <dd class="description">
+        
+      
+        <dt id="EOF">EOF
+        
+        <dd class="description">
+        
+      
+        <dt id="EOR">EOR
+        
+        <dd class="description">
+        
+      
+        <dt id="EOREC">EOREC
+        
+        <dd class="description">
+        
+      
+        <dt id="EXOPL">EXOPL
+        
+        <dd class="description">
+        
+      
+        <dt id="FORWARDX">FORWARDX
+        
+        <dd class="description">
+        
+      
+        <dt id="GA">GA
+        
+        <dd class="description"><p>1 byte commands</p>
+        
+      
+        <dt id="GMCP">GMCP
+        
+        <dd class="description">
+        
+      
+        <dt id="IAC">IAC
+        
+        <dd class="description">
+        
+      
+        <dt id="IP">IP
+        
+        <dd class="description">
+        
+      
+        <dt id="KERMIT">KERMIT
+        
+        <dd class="description">
+        
+      
+        <dt id="LFLOW">LFLOW
+        
+        <dd class="description">
+        
+      
+        <dt id="LINEMODE">LINEMODE
+        
+        <dd class="description">
+        
+      
+        <dt id="LOGOUT">LOGOUT
+        
+        <dd class="description">
+        
+      
+        <dt id="MSDP">MSDP
+        
+        <dd class="description">
+        
+      
+        <dt id="MSP">MSP
+        
+        <dd class="description">
+        
+      
+        <dt id="MSP2">MSP2
+        
+        <dd class="description">
+        
+      
+        <dt id="MSSP">MSSP
+        
+        <dd class="description">
+        
+      
+        <dt id="MULTIPLEX">MULTIPLEX
+        
+        <dd class="description">
+        
+      
+        <dt id="MUSIC">MUSIC
+        
+        <dd class="description">
+        
+      
+        <dt id="MXP">MXP
+        
+        <dd class="description">
+        
+      
+        <dt id="NAMS">NAMS
+        
+        <dd class="description">
+        
+      
+        <dt id="NAOCRD">NAOCRD
+        
+        <dd class="description">
+        
+      
+        <dt id="NAOFFD">NAOFFD
+        
+        <dd class="description">
+        
+      
+        <dt id="NAOHTD">NAOHTD
+        
+        <dd class="description">
+        
+      
+        <dt id="NAOHTS">NAOHTS
+        
+        <dd class="description">
+        
+      
+        <dt id="NAOL">NAOL
+        
+        <dd class="description">
+        
+      
+        <dt id="NAOLFD">NAOLFD
+        
+        <dd class="description">
+        
+      
+        <dt id="NAOP">NAOP
+        
+        <dd class="description">
+        
+      
+        <dt id="NAOVTD">NAOVTD
+        
+        <dd class="description">
+        
+      
+        <dt id="NAOVTS">NAOVTS
+        
+        <dd class="description">
+        
+      
+        <dt id="NAWS">NAWS
+        
+        <dd class="description">
+        
+      
+        <dt id="NEW_ENVIRON">NEW_ENVIRON
+        
+        <dd class="description">
+        
+      
+        <dt id="NOP">NOP
+        
+        <dd class="description">
+        
+      
+        <dt id="OUTMRK">OUTMRK
+        
+        <dd class="description">
+        
+      
+        <dt id="PHEARTBEAT">PHEARTBEAT
+        
+        <dd class="description">
+        
+      
+        <dt id="PLOGON">PLOGON
+        
+        <dd class="description">
+        
+      
+        <dt id="RCP">RCP
+        
+        <dd class="description">
+        
+      
+        <dt id="RCTE">RCTE
+        
+        <dd class="description">
+        
+      
+        <dt id="REGIME3270">REGIME3270
+        
+        <dd class="description">
+        
+      
+        <dt id="RSP">RSP
+        
+        <dd class="description">
+        
+      
+        <dt id="SB">SB
+        
+        <dd class="description">
+        
+      
+        <dt id="SE">SE
+        
+        <dd class="description">
+        
+      
+        <dt id="SENDURL">SENDURL
+        
+        <dd class="description">
+        
+      
+        <dt id="SGA">SGA
+        
+        <dd class="description">
+        
+      
+        <dt id="SNDLOC">SNDLOC
+        
+        <dd class="description">
+        
+      
+        <dt id="SOUND">SOUND
+        
+        <dd class="description">
+        
+      
+        <dt id="SSPI">SSPI
+        
+        <dd class="description">
+        
+      
+        <dt id="STATUS">STATUS
+        
+        <dd class="description">
+        
+      
+        <dt id="SUPDUP">SUPDUP
+        
+        <dd class="description">
+        
+      
+        <dt id="SUPDUPOUTPUT">SUPDUPOUTPUT
+        
+        <dd class="description">
+        
+      
+        <dt id="SUPLECHO">SUPLECHO
+        
+        <dd class="description">
+        
+      
+        <dt id="SUSP">SUSP
+        
+        <dd class="description">
+        
+      
+        <dt id="TLS">TLS
+        
+        <dd class="description">
+        
+      
+        <dt id="TM">TM
+        
+        <dd class="description">
+        
+      
+        <dt id="TN3270">TN3270
+        
+        <dd class="description">
+        
+      
+        <dt id="TSPEED">TSPEED
+        
+        <dd class="description">
+        
+      
+        <dt id="TTYLOC">TTYLOC
+        
+        <dd class="description">
+        
+      
+        <dt id="TTYPE">TTYPE
+        
+        <dd class="description">
+        
+      
+        <dt id="TUID">TUID
+        
+        <dd class="description">
+        
+      
+        <dt id="WILL">WILL
+        
+        <dd class="description"><p>2 byte commands</p>
+        
+      
+        <dt id="WONT">WONT
+        
+        <dd class="description">
+        
+      
+        <dt id="X3PAD">X3PAD
+        
+        <dd class="description">
+        
+      
+        <dt id="XASCII">XASCII
+        
+        <dd class="description">
+        
+      
+        <dt id="XAUTH">XAUTH
+        
+        <dd class="description">
+        
+      
+        <dt id="XDISPLOC">XDISPLOC
+        
+        <dd class="description">
+        
+      
+        <dt id="ZMP">ZMP
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>TML - TeensyMUD 3.0.0 Mud Server</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+    <li class="file"><a href="./TML.html">TML</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Farts.html">Farts</a>
+  
+    <li><a href="./Farts/AttributeSyntaxNode.html">Farts::AttributeSyntaxNode</a>
+  
+    <li><a href="./Farts/CallSyntaxNode.html">Farts::CallSyntaxNode</a>
+  
+    <li><a href="./Farts/CommandSyntaxNode.html">Farts::CommandSyntaxNode</a>
+  
+    <li><a href="./Farts/CommentSyntaxNode.html">Farts::CommentSyntaxNode</a>
+  
+    <li><a href="./Farts/EndSyntaxNode.html">Farts::EndSyntaxNode</a>
+  
+    <li><a href="./Farts/IfSyntaxNode.html">Farts::IfSyntaxNode</a>
+  
+    <li><a href="./Farts/Interpreter.html">Farts::Interpreter</a>
+  
+    <li><a href="./Farts/Lexer.html">Farts::Lexer</a>
+  
+    <li><a href="./Farts/Lib.html">Farts::Lib</a>
+  
+    <li><a href="./Farts/LiteralSyntaxNode.html">Farts::LiteralSyntaxNode</a>
+  
+    <li><a href="./Farts/LocalVarSyntaxNode.html">Farts::LocalVarSyntaxNode</a>
+  
+    <li><a href="./Farts/Parser.html">Farts::Parser</a>
+  
+    <li><a href="./Farts/ProgramSyntaxNode.html">Farts::ProgramSyntaxNode</a>
+  
+    <li><a href="./Farts/SyntaxNode.html">Farts::SyntaxNode</a>
+  
+    <li><a href="./SQLite.html">SQLite</a>
+  
+    <li><a href="./SQLite3.html">SQLite3</a>
+  
+    <li><a href="./SQLite3/Database.html">SQLite3::Database</a>
+  
+    <li><a href="./SQLite/Database.html">SQLite::Database</a>
+  
+    <li><a href="./TernaryTrie.html">TernaryTrie</a>
+  
+    <li><a href="./TernaryTrie/TNode.html">TernaryTrie::TNode</a>
+  
+    <li><a href="./ASCIICodes.html">ASCIICodes</a>
+  
+    <li><a href="./Acceptor.html">Acceptor</a>
+  
+    <li><a href="./Account.html">Account</a>
+  
+    <li><a href="./BoolExpParser.html">BoolExpParser</a>
+  
+    <li><a href="./CacheEntry.html">CacheEntry</a>
+  
+    <li><a href="./CacheManager.html">CacheManager</a>
+  
+    <li><a href="./CacheStats.html">CacheStats</a>
+  
+    <li><a href="./Character.html">Character</a>
+  
+    <li><a href="./Client.html">Client</a>
+  
+    <li><a href="./Cmd.html">Cmd</a>
+  
+    <li><a href="./ColorFilter.html">ColorFilter</a>
+  
+    <li><a href="./Command.html">Command</a>
+  
+    <li><a href="./Configuration.html">Configuration</a>
+  
+    <li><a href="./Connection.html">Connection</a>
+  
+    <li><a href="./Connector.html">Connector</a>
+  
+    <li><a href="./ConsoleClient.html">ConsoleClient</a>
+  
+    <li><a href="./CursesClient.html">CursesClient</a>
+  
+    <li><a href="./DbmStore.html">DbmStore</a>
+  
+    <li><a href="./DebugFilter.html">DebugFilter</a>
+  
+    <li><a href="./Dumper.html">Dumper</a>
+  
+    <li><a href="./Engine.html">Engine</a>
+  
+    <li><a href="./Event.html">Event</a>
+  
+    <li><a href="./EventManager.html">EventManager</a>
+  
+    <li><a href="./Exit.html">Exit</a>
+  
+    <li><a href="./Filter.html">Filter</a>
+  
+    <li><a href="./GameObject.html">GameObject</a>
+  
+    <li><a href="./GdbmStore.html">GdbmStore</a>
+  
+    <li><a href="./LineIO.html">LineIO</a>
+  
+    <li><a href="./Loader.html">Loader</a>
+  
+    <li><a href="./Log.html">Log</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Obj.html">Obj</a>
+  
+    <li><a href="./ObjCmd.html">ObjCmd</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./PacketIO.html">PacketIO</a>
+  
+    <li><a href="./ProtocolStack.html">ProtocolStack</a>
+  
+    <li><a href="./Publisher.html">Publisher</a>
+  
+    <li><a href="./Reactor.html">Reactor</a>
+  
+    <li><a href="./Room.html">Room</a>
+  
+    <li><a href="./Root.html">Root</a>
+  
+    <li><a href="./Script.html">Script</a>
+  
+    <li><a href="./SdbmStore.html">SdbmStore</a>
+  
+    <li><a href="./Session.html">Session</a>
+  
+    <li><a href="./SockIO.html">SockIO</a>
+  
+    <li><a href="./Sqlite3Store.html">Sqlite3Store</a>
+  
+    <li><a href="./SqliteStore.html">SqliteStore</a>
+  
+    <li><a href="./Store.html">Store</a>
+  
+    <li><a href="./String.html">String</a>
+  
+    <li><a href="./TelnetCodes.html">TelnetCodes</a>
+  
+    <li><a href="./TelnetFilter.html">TelnetFilter</a>
+  
+    <li><a href="./TerminalFilter.html">TerminalFilter</a>
+  
+    <li><a href="./Timer.html">Timer</a>
+  
+    <li><a href="./Utility.html">Utility</a>
+  
+    <li><a href="./VT100Codes.html">VT100Codes</a>
+  
+    <li><a href="./World.html">World</a>
+  
+    <li><a href="./XmlStore.html">XmlStore</a>
+  
+    <li><a href="./YamlStore.html">YamlStore</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-Teensy+Markup+Language">Teensy Markup Language</h1>
+
+<h2 id="label-Introduction">Introduction</h2>
+
+<p>Teensy Markup Language is a general mechanism used to markup mud text. 
+Markup directives are translated to the best format the client can handle
+whether it be VTxxx/ANSI, HTML, MXP, ZMP or raw text.  If the client cannot
+handle a particular directive, then it is stripped from the stream before
+sending it to the client.</p>
+
+<h2 id="label-Syntax">Syntax</h2>
+
+<p>Markup is placed inline in strings using keywords in brackets.  Keywords
+are case insensitive.  Normal use of brackets is allowed and needs no
+special escaping.</p>
+
+<h2 id="label-Text+Markup">Text Markup</h2>
+
+<h3 id="label-%5BCOLOR+name%5D+or+%5BCOLOR+name+ON+name%5D">[COLOR name] or [COLOR name ON name]</h3>
+
+<p>Color changes the foreground and background color of the enclosed text. 
+The first form specifies only the foreground, the latter both foreground
+and background.  Color is terminated to the default value using [/COLOR]. 
+The names of the colors are those names valid under SVG 1.0.  See colors.rb
+module.</p>
+
+<p>Example:</p>
+
+<pre>[color fuchsia on blue]Hello World[/color]</pre>
+
+<h3 id="label-%5BCLASS+name%5D">[CLASS name]</h3>
+
+<p>Classes are used to tag text as to belonging to an arbitrary category.  A
+class may be used by the client to color text, send it to a window or area,
+or otherwise process it differently.  A class is terminated by [/CLASS]. 
+For clients with no capability, a class directive may be translated server
+side into other directives like color or windows.</p>
+
+<p>Example:</p>
+
+<pre class="ruby">[<span class="ruby-keyword">class</span> <span class="ruby-identifier">speech</span>]<span class="ruby-constant">Bubba</span> <span class="ruby-identifier">says</span>, <span class="ruby-string">&quot;Hi Biffy&quot;</span>[<span class="ruby-regexp">%rclass]
+[class description]The sword has a ruby encrusted hilt.[/</span><span class="ruby-keyword">class</span>]
+</pre>
+
+<h3 id="label-%5BFONT+name%5D">[FONT name]</h3>
+
+<p>Font changes the character font of the enclosed text.  Names are not
+currently not checked, just passed to the client.  A font change is
+terminated using [/FONT].</p>
+
+<p>Example:</p>
+
+<pre>[font wingdings]your text[/font]</pre>
+
+<h3 id="label-%5BSIZE+name%5D">[SIZE name]</h3>
+
+<p>Size changes the size of the characters of the enclosed text.  Names are
+not currently not checked and are just passed to the client.  The may be
+relative sizes like +1 or -2.  A size change is terminated using [/SIZE].</p>
+
+<p>Example:</p>
+
+<pre>[size +3]My big text[/size]</pre>
+
+<h3 id="label-%5BB%5D+or+%5BBOLD%5D">[B] or [BOLD]</h3>
+
+<p>This directs the enclosed text to be marked as bold.  It’s terminated by
+[/B] or [/BOLD]</p>
+
+<p>Example:</p>
+
+<pre>[b]My bolded text[/b]</pre>
+
+<h3 id="label-%5BI%5D+or+%5BITALICS%5D">[I] or [ITALICS]</h3>
+
+<p>This directs the enclosed text to be marked as italics.  It’s terminated by
+[/I] or [/ITALICS]</p>
+
+<p>Example:</p>
+
+<pre>[i]My italicized text[/i]</pre>
+
+<h3 id="label-%5BU%5D+or+%5BUNDERLINE%5D">[U] or [UNDERLINE]</h3>
+
+<p>This directs the enclosed text to be marked as underlined.  It’s terminated
+by [/U] or [/UNDERLINE]</p>
+
+<p>Example:</p>
+
+<pre>[u]My underlined text[/u]</pre>
+
+<h2 id="label-Display+Control">Display Control</h2>
+
+<p>Some of these are meaningless when sent to the client, and are more likely
+to be received.  The terminalfilter protocol layer will translate these
+VT100 codes to this format before sending on the the player parser.  All
+are unterminated.</p>
+
+<h3 id="label-%5BSCROLLDOWN%5D">[SCROLLDOWN]</h3>
+
+<p><a href="Client.html">Client</a> scroll down a line.</p>
+
+<h3 id="label-%5BSCROLLUP%5D">[SCROLLUP]</h3>
+
+<p><a href="Client.html">Client</a> scroll up a line.</p>
+
+<h3 id="label-%5BUP+n%5D+%7C+%5BDOWN+n%5D+%7C+%5BRIGHT+n%5D+%7C+%5BLEFT+n%5D">[UP n] | [DOWN n] | [RIGHT n] | [LEFT n]</h3>
+
+<p>Move the cursor up, down, right or left n positions.</p>
+
+<p>Example:</p>
+
+<pre>[up 5]text[down 5]more text</pre>
+
+<h3 id="label-%5BTAB%5D+%7C+%22t%22">[TAB] | “t”</h3>
+
+<p><a href="Client.html">Client</a> hit the tab key, or send client tab.</p>
+
+<h3 id="label-%5BBELL%5D+%7C+%22b%22">[BELL] | “b”</h3>
+
+<p>Send client annoying belltone, or client sent us annoying belltone.</p>
+
+<h3 id="label-%5BBS%5D+%7C+%22b%22">[BS] | “b”</h3>
+
+<p>Send client a backspace.</p>
+
+<h3 id="label-%5BHOME+n%2Cn%5D">[HOME n,n]</h3>
+
+<p><a href="Client.html">Client</a> hit home key, or tell client to move the
+cursor to row, col</p>
+
+<p>Example:</p>
+
+<pre>[HOME 15,40]Center of screen</pre>
+
+<h3 id="label-%5BCURREPT%7C+%7C+%5BCURSOR+n%2Cn%5D">[CURREPT| | [CURSOR n,n]</h3>
+
+<p>Ask client to tell us the position of the cursor.</p>
+
+<p><a href="Client.html">Client</a> sends us the position of the cursor in
+row, col.</p>
+
+<h3 id="label-%5BCLEAR%5D">[CLEAR]</h3>
+
+<p>Clear the client screen</p>
+
+<h3 id="label-%5BCLEARLINE%5D">[CLEARLINE]</h3>
+
+<p>Clear the current line</p>
+
+<h3 id="label-%5BCURSAVE%5D+%7C+%5BCURREST%5D">[CURSAVE] | [CURREST]</h3>
+
+<p>Ask client to save cursor or restore the saved cursor</p>
+
+<p>Example:</p>
+
+<pre>[CURSAVE][HOME 1,1]Title[CURREST]</pre>
+
+<h3 id="label-%5BSCRREG+n%2Cn%5D+">[SCRREG n,n] </h3>
+
+<p>Tell client to setup a scroll region with start and end rows.</p>
+
+<h3 id="label-%5BSCRRESET%5D+">[SCRRESET] </h3>
+
+<p>Clear the setup scroll region.</p>
+
+<h3 id="label-%5BINSERT%5D">[INSERT]</h3>
+
+<p><a href="Client.html">Client</a> hit insert key.</p>
+
+<h3 id="label-%5BEND%5D">[END]</h3>
+
+<p><a href="Client.html">Client</a> hit end key.</p>
+
+<h3 id="label-%5BPAGEDOWN%5D">[PAGEDOWN]</h3>
+
+<p><a href="Client.html">Client</a> hit page down key.</p>
+
+<h3 id="label-%5BPAGEUP%5D">[PAGEUP]</h3>
+
+<p><a href="Client.html">Client</a> hit page down key.</p>
+
+<h3 id="label-%5BFn%5D">[Fn]</h3>
+
+<p><a href="Client.html">Client</a> hit function key.  We support F1-F10</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

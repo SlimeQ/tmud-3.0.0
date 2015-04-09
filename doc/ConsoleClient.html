@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class ConsoleClient - TeensyMUD 3.0.0 Mud Server</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>tclient.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Client.html">Client</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-conmsg">#conmsg</a>
+    
+    <li><a href="#method-i-run">#run</a>
+    
+    <li><a href="#method-i-update">#update</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+    <li class="file"><a href="./TML.html">TML</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Farts.html">Farts</a>
+  
+    <li><a href="./Farts/AttributeSyntaxNode.html">Farts::AttributeSyntaxNode</a>
+  
+    <li><a href="./Farts/CallSyntaxNode.html">Farts::CallSyntaxNode</a>
+  
+    <li><a href="./Farts/CommandSyntaxNode.html">Farts::CommandSyntaxNode</a>
+  
+    <li><a href="./Farts/CommentSyntaxNode.html">Farts::CommentSyntaxNode</a>
+  
+    <li><a href="./Farts/EndSyntaxNode.html">Farts::EndSyntaxNode</a>
+  
+    <li><a href="./Farts/IfSyntaxNode.html">Farts::IfSyntaxNode</a>
+  
+    <li><a href="./Farts/Interpreter.html">Farts::Interpreter</a>
+  
+    <li><a href="./Farts/Lexer.html">Farts::Lexer</a>
+  
+    <li><a href="./Farts/Lib.html">Farts::Lib</a>
+  
+    <li><a href="./Farts/LiteralSyntaxNode.html">Farts::LiteralSyntaxNode</a>
+  
+    <li><a href="./Farts/LocalVarSyntaxNode.html">Farts::LocalVarSyntaxNode</a>
+  
+    <li><a href="./Farts/Parser.html">Farts::Parser</a>
+  
+    <li><a href="./Farts/ProgramSyntaxNode.html">Farts::ProgramSyntaxNode</a>
+  
+    <li><a href="./Farts/SyntaxNode.html">Farts::SyntaxNode</a>
+  
+    <li><a href="./SQLite.html">SQLite</a>
+  
+    <li><a href="./SQLite3.html">SQLite3</a>
+  
+    <li><a href="./SQLite3/Database.html">SQLite3::Database</a>
+  
+    <li><a href="./SQLite/Database.html">SQLite::Database</a>
+  
+    <li><a href="./TernaryTrie.html">TernaryTrie</a>
+  
+    <li><a href="./TernaryTrie/TNode.html">TernaryTrie::TNode</a>
+  
+    <li><a href="./ASCIICodes.html">ASCIICodes</a>
+  
+    <li><a href="./Acceptor.html">Acceptor</a>
+  
+    <li><a href="./Account.html">Account</a>
+  
+    <li><a href="./BoolExpParser.html">BoolExpParser</a>
+  
+    <li><a href="./CacheEntry.html">CacheEntry</a>
+  
+    <li><a href="./CacheManager.html">CacheManager</a>
+  
+    <li><a href="./CacheStats.html">CacheStats</a>
+  
+    <li><a href="./Character.html">Character</a>
+  
+    <li><a href="./Client.html">Client</a>
+  
+    <li><a href="./Cmd.html">Cmd</a>
+  
+    <li><a href="./ColorFilter.html">ColorFilter</a>
+  
+    <li><a href="./Command.html">Command</a>
+  
+    <li><a href="./Configuration.html">Configuration</a>
+  
+    <li><a href="./Connection.html">Connection</a>
+  
+    <li><a href="./Connector.html">Connector</a>
+  
+    <li><a href="./ConsoleClient.html">ConsoleClient</a>
+  
+    <li><a href="./CursesClient.html">CursesClient</a>
+  
+    <li><a href="./DbmStore.html">DbmStore</a>
+  
+    <li><a href="./DebugFilter.html">DebugFilter</a>
+  
+    <li><a href="./Dumper.html">Dumper</a>
+  
+    <li><a href="./Engine.html">Engine</a>
+  
+    <li><a href="./Event.html">Event</a>
+  
+    <li><a href="./EventManager.html">EventManager</a>
+  
+    <li><a href="./Exit.html">Exit</a>
+  
+    <li><a href="./Filter.html">Filter</a>
+  
+    <li><a href="./GameObject.html">GameObject</a>
+  
+    <li><a href="./GdbmStore.html">GdbmStore</a>
+  
+    <li><a href="./LineIO.html">LineIO</a>
+  
+    <li><a href="./Loader.html">Loader</a>
+  
+    <li><a href="./Log.html">Log</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Obj.html">Obj</a>
+  
+    <li><a href="./ObjCmd.html">ObjCmd</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./PacketIO.html">PacketIO</a>
+  
+    <li><a href="./ProtocolStack.html">ProtocolStack</a>
+  
+    <li><a href="./Publisher.html">Publisher</a>
+  
+    <li><a href="./Reactor.html">Reactor</a>
+  
+    <li><a href="./Room.html">Room</a>
+  
+    <li><a href="./Root.html">Root</a>
+  
+    <li><a href="./Script.html">Script</a>
+  
+    <li><a href="./SdbmStore.html">SdbmStore</a>
+  
+    <li><a href="./Session.html">Session</a>
+  
+    <li><a href="./SockIO.html">SockIO</a>
+  
+    <li><a href="./Sqlite3Store.html">Sqlite3Store</a>
+  
+    <li><a href="./SqliteStore.html">SqliteStore</a>
+  
+    <li><a href="./Store.html">Store</a>
+  
+    <li><a href="./String.html">String</a>
+  
+    <li><a href="./TelnetCodes.html">TelnetCodes</a>
+  
+    <li><a href="./TelnetFilter.html">TelnetFilter</a>
+  
+    <li><a href="./TerminalFilter.html">TerminalFilter</a>
+  
+    <li><a href="./Timer.html">Timer</a>
+  
+    <li><a href="./Utility.html">Utility</a>
+  
+    <li><a href="./VT100Codes.html">VT100Codes</a>
+  
+    <li><a href="./World.html">World</a>
+  
+    <li><a href="./XmlStore.html">XmlStore</a>
+  
+    <li><a href="./YamlStore.html">YamlStore</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class ConsoleClient</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(opts)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File tclient.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">system</span>(<span class="ruby-string">'stty cbreak -echo'</span>) <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@opts</span>.<span class="ruby-identifier">win32</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@opts</span>.<span class="ruby-identifier">echo</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-conmsg" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">conmsg</span><span
+            class="method-args">(msg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="conmsg-source">
+            <pre><span class="ruby-comment"># File tclient.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">conmsg</span> <span class="ruby-identifier">msg</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- conmsg-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- conmsg-method -->
+
+    
+      <div id="method-i-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File tclient.rb, line 166</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span>
+    <span class="ruby-identifier">shutdown</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">Reactor</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@opts</span>.<span class="ruby-identifier">port</span>, <span class="ruby-identifier">$conntype</span>, <span class="ruby-identifier">$connio</span>, <span class="ruby-identifier">$connopts</span>,
+       <span class="ruby-identifier">$connfilters</span>, <span class="ruby-ivar">@opts</span>.<span class="ruby-identifier">address</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Unable to start TeensyClient&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">start</span>(<span class="ruby-keyword">self</span>)
+    <span class="ruby-identifier">conmsg</span> <span class="ruby-node">&quot;Connected to #{@opts.address}:#{@opts.port}.  Use CTL-C to QUIT&quot;</span>
+    <span class="ruby-keyword">until</span> <span class="ruby-identifier">shutdown</span>
+      <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">poll</span>(<span class="ruby-value">0.1</span>)
+      <span class="ruby-identifier">c</span> = <span class="ruby-identifier">getkey</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">c</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">32</span><span class="ruby-operator">..</span><span class="ruby-value">127</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">chr</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">13</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\n&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@opts</span>.<span class="ruby-identifier">win32</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">10</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\n&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@opts</span>.<span class="ruby-identifier">win32</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">315</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[11~&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">316</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[12~&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">317</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[13~&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">318</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[14~&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">319</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[15~&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">320</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[17~&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">321</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[18~&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">322</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[19~&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">323</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[20~&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">324</span> <span class="ruby-comment"># Windows F10</span>
+        <span class="ruby-identifier">conmsg</span> <span class="ruby-string">&quot;Quitting...&quot;</span>
+        <span class="ruby-identifier">shutdown</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-comment">#      when 27 # xterm F10</span>
+<span class="ruby-comment">#        if getkey == 91 &amp;&amp; getkey == 50 &amp;&amp; getkey == 49 &amp;&amp; getkey == 126</span>
+<span class="ruby-comment">#          conmsg &quot;Quitting...&quot;</span>
+<span class="ruby-comment">#          shutdown = true</span>
+<span class="ruby-comment">#        end</span>
+
+      <span class="ruby-keyword">when</span> <span class="ruby-value">338</span>  <span class="ruby-comment"># INS</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[2~&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">339</span>  <span class="ruby-comment"># DEL</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\0010&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">327</span>  <span class="ruby-comment"># HOME</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[7~&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">335</span>  <span class="ruby-comment"># END</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[8~&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">329</span>  <span class="ruby-comment"># PAGEUP</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[5~&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">337</span>  <span class="ruby-comment"># PAGEDOWN</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[6~&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">328</span>  <span class="ruby-comment"># UP</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[A&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">336</span>  <span class="ruby-comment"># DOWN</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[B&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">333</span>  <span class="ruby-comment"># RIGHT</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[C&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">331</span>  <span class="ruby-comment"># LEFT</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;\e[D&quot;</span>)
+
+
+      <span class="ruby-keyword">when</span> <span class="ruby-value">256</span><span class="ruby-operator">..</span><span class="ruby-value">512</span>
+        <span class="ruby-identifier">conmsg</span> <span class="ruby-node">&quot;Unknown key hit code - #{c.inspect}&quot;</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">publish</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">chr</span>)
+<span class="ruby-comment">#        conmsg &quot;Unknown key hit code - #{c.inspect}&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span> <span class="ruby-comment"># until</span>
+    <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">stop</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">SystemExit</span>, <span class="ruby-constant">Interrupt</span>
+    <span class="ruby-identifier">conmsg</span> <span class="ruby-string">&quot;\nConnection closed exiting&quot;</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span>
+    <span class="ruby-identifier">conmsg</span> <span class="ruby-string">&quot;\nException caught error in client: &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">$!</span>
+    <span class="ruby-identifier">conmsg</span> <span class="ruby-identifier">$@</span>
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-identifier">system</span>(<span class="ruby-string">'stty -cbreak echo'</span>) <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@opts</span>.<span class="ruby-identifier">win32</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@opts</span>.<span class="ruby-identifier">echo</span>
+  <span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">(msg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File tclient.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>(<span class="ruby-identifier">msg</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">msg</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Connection</span>, <span class="ruby-value">:initdone</span>
+    <span class="ruby-keyword">super</span>(<span class="ruby-identifier">msg</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:disconnected</span>
+    <span class="ruby-identifier">unsubscribe_all</span>
+    <span class="ruby-identifier">$shutdown</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Disconnected.&quot;</span>
+    <span class="ruby-identifier">exit</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span>
+    <span class="ruby-identifier">print</span> <span class="ruby-identifier">msg</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Unknown msg - #{msg.inspect}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

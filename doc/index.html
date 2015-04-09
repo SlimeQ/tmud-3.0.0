@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>TeensyMUD 3.0.0 Mud Server</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body>
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+    <li class="file"><a href="./TML.html">TML</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Farts.html">Farts</a>
+  
+    <li><a href="./Farts/AttributeSyntaxNode.html">Farts::AttributeSyntaxNode</a>
+  
+    <li><a href="./Farts/CallSyntaxNode.html">Farts::CallSyntaxNode</a>
+  
+    <li><a href="./Farts/CommandSyntaxNode.html">Farts::CommandSyntaxNode</a>
+  
+    <li><a href="./Farts/CommentSyntaxNode.html">Farts::CommentSyntaxNode</a>
+  
+    <li><a href="./Farts/EndSyntaxNode.html">Farts::EndSyntaxNode</a>
+  
+    <li><a href="./Farts/IfSyntaxNode.html">Farts::IfSyntaxNode</a>
+  
+    <li><a href="./Farts/Interpreter.html">Farts::Interpreter</a>
+  
+    <li><a href="./Farts/Lexer.html">Farts::Lexer</a>
+  
+    <li><a href="./Farts/Lib.html">Farts::Lib</a>
+  
+    <li><a href="./Farts/LiteralSyntaxNode.html">Farts::LiteralSyntaxNode</a>
+  
+    <li><a href="./Farts/LocalVarSyntaxNode.html">Farts::LocalVarSyntaxNode</a>
+  
+    <li><a href="./Farts/Parser.html">Farts::Parser</a>
+  
+    <li><a href="./Farts/ProgramSyntaxNode.html">Farts::ProgramSyntaxNode</a>
+  
+    <li><a href="./Farts/SyntaxNode.html">Farts::SyntaxNode</a>
+  
+    <li><a href="./SQLite.html">SQLite</a>
+  
+    <li><a href="./SQLite3.html">SQLite3</a>
+  
+    <li><a href="./SQLite3/Database.html">SQLite3::Database</a>
+  
+    <li><a href="./SQLite/Database.html">SQLite::Database</a>
+  
+    <li><a href="./TernaryTrie.html">TernaryTrie</a>
+  
+    <li><a href="./TernaryTrie/TNode.html">TernaryTrie::TNode</a>
+  
+    <li><a href="./ASCIICodes.html">ASCIICodes</a>
+  
+    <li><a href="./Acceptor.html">Acceptor</a>
+  
+    <li><a href="./Account.html">Account</a>
+  
+    <li><a href="./BoolExpParser.html">BoolExpParser</a>
+  
+    <li><a href="./CacheEntry.html">CacheEntry</a>
+  
+    <li><a href="./CacheManager.html">CacheManager</a>
+  
+    <li><a href="./CacheStats.html">CacheStats</a>
+  
+    <li><a href="./Character.html">Character</a>
+  
+    <li><a href="./Client.html">Client</a>
+  
+    <li><a href="./Cmd.html">Cmd</a>
+  
+    <li><a href="./ColorFilter.html">ColorFilter</a>
+  
+    <li><a href="./Command.html">Command</a>
+  
+    <li><a href="./Configuration.html">Configuration</a>
+  
+    <li><a href="./Connection.html">Connection</a>
+  
+    <li><a href="./Connector.html">Connector</a>
+  
+    <li><a href="./ConsoleClient.html">ConsoleClient</a>
+  
+    <li><a href="./CursesClient.html">CursesClient</a>
+  
+    <li><a href="./DbmStore.html">DbmStore</a>
+  
+    <li><a href="./DebugFilter.html">DebugFilter</a>
+  
+    <li><a href="./Dumper.html">Dumper</a>
+  
+    <li><a href="./Engine.html">Engine</a>
+  
+    <li><a href="./Event.html">Event</a>
+  
+    <li><a href="./EventManager.html">EventManager</a>
+  
+    <li><a href="./Exit.html">Exit</a>
+  
+    <li><a href="./Filter.html">Filter</a>
+  
+    <li><a href="./GameObject.html">GameObject</a>
+  
+    <li><a href="./GdbmStore.html">GdbmStore</a>
+  
+    <li><a href="./LineIO.html">LineIO</a>
+  
+    <li><a href="./Loader.html">Loader</a>
+  
+    <li><a href="./Log.html">Log</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Obj.html">Obj</a>
+  
+    <li><a href="./ObjCmd.html">ObjCmd</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./PacketIO.html">PacketIO</a>
+  
+    <li><a href="./ProtocolStack.html">ProtocolStack</a>
+  
+    <li><a href="./Publisher.html">Publisher</a>
+  
+    <li><a href="./Reactor.html">Reactor</a>
+  
+    <li><a href="./Room.html">Room</a>
+  
+    <li><a href="./Root.html">Root</a>
+  
+    <li><a href="./Script.html">Script</a>
+  
+    <li><a href="./SdbmStore.html">SdbmStore</a>
+  
+    <li><a href="./Session.html">Session</a>
+  
+    <li><a href="./SockIO.html">SockIO</a>
+  
+    <li><a href="./Sqlite3Store.html">Sqlite3Store</a>
+  
+    <li><a href="./SqliteStore.html">SqliteStore</a>
+  
+    <li><a href="./Store.html">Store</a>
+  
+    <li><a href="./String.html">String</a>
+  
+    <li><a href="./TelnetCodes.html">TelnetCodes</a>
+  
+    <li><a href="./TelnetFilter.html">TelnetFilter</a>
+  
+    <li><a href="./TerminalFilter.html">TerminalFilter</a>
+  
+    <li><a href="./Timer.html">Timer</a>
+  
+    <li><a href="./Utility.html">Utility</a>
+  
+    <li><a href="./VT100Codes.html">VT100Codes</a>
+  
+    <li><a href="./World.html">World</a>
+  
+    <li><a href="./XmlStore.html">XmlStore</a>
+  
+    <li><a href="./YamlStore.html">YamlStore</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-TeensyMUD+Server">TeensyMUD Server</h1>
+
+<h1 id="label-v3.0.0">v3.0.0</h1>
+
+<h2 id="label-Introduction">Introduction</h2>
+
+<p>TeensyMUD is a very simple mud server written in Ruby.  It uses a
+multiplexed single-threaded network driver using Acceptor/Reactor and
+Observer patterns and YAML formatted text files as a database.  It is also
+a pure event driven system where all game objects communicate with each
+other via events.</p>
+
+<p>This server was initially created in response to an Aprils Fool’s joke
+posted by Erwin Andreasen on TheMudConnector forum announcing a 1K mud
+contest.  Those obfuscated versions can be found in the repository.</p>
+
+<h2 id="label-Download">Download</h2>
+
+<p>The latest release can be found at <a
+href="http://teensymud.kicks-ass.org">teensymud.kicks-ass.org</a></p>
+
+<h2 id="label-System+Dependencies">System Dependencies</h2>
+
+<h3 id="label-Required">Required</h3>
+<dl class="rdoc-list label-list"><dt>Ruby 1.9.x
+<dd>
+<p>Can be obtained at the home of Ruby, <a
+href="http://www.ruby-lang.org.">www.ruby-lang.org.</a>  It runs on most
+platforms.</p>
+</dd><dt>Log4r
+<dd>
+<p>All logging done through this now. Install from Ruby Gems, or <a
+href="http://log4r.sourceforge.net/">log4r.sourceforge.net/</a></p>
+</dd></dl>
+
+<h3 id="label-Optional">Optional</h3>
+<dl class="rdoc-list label-list"><dt>RubyGems
+<dd>
+<p>To install rake and various things.  See - <a
+href="http://rubyforge.org/projects/rubygems">rubyforge.org/projects/rubygems</a></p>
+</dd><dt>Rake
+<dd>
+<p>To build documentation, run tests, etc.  See - <a
+href="http://rake.rubyforge.org">rake.rubyforge.org</a></p>
+</dd><dt>Racc
+<dd>
+<p>To rebuild FARTS or BoolExp parser.  Ruby comes with Racc runtime so this
+is not needed for execution. See - <a
+href="http://i.loveruby.net/en/prog/racc.html">i.loveruby.net/en/prog/racc.html</a></p>
+</dd><dt>FlexMock
+<dd>
+<p>To run regression tests.  See - <a
+href="http://onestepback.org/software/flexmock/">onestepback.org/software/flexmock/</a></p>
+</dd><dt>Curses
+<dd>
+<p>To run tclient in curses mode under windows.  The Windows one-click
+installer may be missing the pdcurses.dll, or if you built it yourself from
+source the curses.so extension probably wasn’t built.  You can get binaries
+for it at <a
+href="http://www.dave.burt.id.au/ruby/curses.zip.">www.dave.burt.id.au/ruby/curses.zip.</a>
+The pdcurses.dll should be placed in your rubybin directory and not your
+windows directories.   See <a
+href="http://jarp.does.notwork.org/win32/">jarp.does.notwork.org/win32/</a>
+for the sources.</p>
+</dd></dl>
+
+<h2 id="label-Features">Features</h2>
+<ul><li>
+<p>Multiplexed single-threaded network driver using Acceptor/Reactor and
+Observer patterns</p>
+</li><li>
+<p>Correct standard TELNET protocol implementation</p>
+</li><li>
+<p>Supports TELNET NAWS, TTYPE, ECHO, SGA, and BINARY options</p>
+</li><li>
+<p>VT-52/100/102/220 support</p>
+</li><li>
+<p>Partial Xterm support</p>
+</li><li>
+<p>ZMP protocol support</p>
+</li><li>
+<p><a href="Client.html">Client</a> detection (18+ clients tested so far)</p>
+</li><li>
+<p>Includes TeensyClient an vt-xxx/xterm capable client for testing.</p>
+</li><li>
+<p>Fully persistent virtual world</p>
+</li><li>
+<p>DBM, GDBM, SDBM, SQLite2, <a href="SQLite3.html">SQLite3</a> and YAML
+supported database back ends</p>
+</li><li>
+<p>Includes database load and dump utilities</p>
+</li><li>
+<p>Configurable object caching support for disk-based databases</p>
+</li><li>
+<p>Automatic persistent properties for objects.</p>
+</li><li>
+<p><a href="Object.html">Object</a> ownership</p>
+</li><li>
+<p>Event-driven system with first class game objects communicating via events</p>
+</li><li>
+<p>Supports room-based system currently with unlimited exits</p>
+</li><li>
+<p><a href="Command.html">Command</a> based online creation</p>
+</li><li>
+<p>Offline creation in YAML</p>
+</li><li>
+<p>Color and VT-100 highlighting support for builders using <a
+href="TML.html">TML</a></p>
+</li><li>
+<p>Dynamic layered command interface</p>
+</li><li>
+<p>Currently supports chat, say and emote communication commands</p>
+</li><li>
+<p>Currently supports player movement, inventory, get and drop commands</p>
+</li><li>
+<p>Autolook and autoexits</p>
+</li><li>
+<p>Turn based combat featuring link death and link suicide ;-)</p>
+</li><li>
+<p>Help system</p>
+</li><li>
+<p>Password encryption</p>
+</li><li>
+<p>Runtime extensible commands.  Add new commands without rebooting.</p>
+</li><li>
+<p>Trigger script programming using Boolean expressions (ala Tiny*) and FARTS
+language</p>
+</li><li>
+<p>AOP-like cuts for PRE and POST event trigger processing</p>
+</li><li>
+<p>Supports multiple persistent and variable timers</p>
+</li><li>
+<p>Regression test suite included</p>
+</li><li>
+<p>Customizable class level logging support</p>
+</li><li>
+<p>Global configuration file support</p>
+</li><li>
+<p>API documentation included (see ‘doc/index.html’)</p>
+</li><li>
+<p>Support forum and wiki</p>
+</li><li>
+<p>Portable - runs on Unix, OS/X, Windows</p>
+</li><li>
+<p>Liberal license</p>
+</li></ul>
+
+<h2 id="label-Installation">Installation</h2>
+<ol><li>
+<p>$ tar xzvf tmud*</p>
+</li><li>
+<p>$ cd tmud*</p>
+</li><li>
+<p>$ ruby tmud.rb</p>
+</li></ol>
+
+<p>That’s it.  It will boot on port 4000 and build an initial database in the
+db directory.</p>
+
+<p>See config.yaml file for more configuration information.  Documentation
+inside.</p>
+
+<h2 id="label-Starting+the+mud">Starting the mud</h2>
+
+<p>Usage: ruby ./tmud.rb [options]</p>
+
+<pre>-p, --port PORT                  Select the port the mud will run on
+                                   (default is 4000)
+-d, --dbfile DBFILE              Select the name of the database file
+                                   (default is 'db/testworld.yaml')
+-c, --config CONFIGFILE          Select the name of the configuration file
+                                   (default is 'config.yaml')
+-l, --logfile LOGFILE            Select the name of the log file
+                                   (default is 'logs/server.log')
+-h, --home LOCATIONID            Select the object id where new characters will start
+                                   (default is 1) 
+-t, --[no-]trace                 Trace execution
+-v, --[no-]verbose               Run verbosely
+    --help                       Show this message
+    --version                    Show version</pre>
+
+<p>Options specified on the command line will override those in the
+config.yaml file.</p>
+
+<p>There is a sample database, db/testworld.yaml that illustrates the use of
+triggers.  The admin account is ‘Wizard’ and the password is ‘potrzebie’.</p>
+
+<p>To start using the sample database either specify it in the config file or
+on the command line:</p>
+<ul><li>
+<p>$ ruby tmud.rb –dbfile db/testworld</p>
+</li></ul>
+
+<p>There are two converted databases from the original tinymud and dikumud. 
+The admin account on both is ‘Wizard’ and the password is ‘potrzebie’.  To
+run with those use:</p>
+<ul><li>
+<p>$ ruby tmud.rb –dbfile db/tinyworld –home 17</p>
+</li><li>
+<p>$ ruby tmud.rb –dbfile db/dikuworld –home 13</p>
+</li></ul>
+
+<p>The TinyMud scripts are only partially operable, which may severely
+restrict your movement.</p>
+
+<p>See db/license.tiny and db/license.diku for more informtion.</p>
+
+<h2 id="label-Operation">Operation</h2>
+<ul><li>
+<p>CTL-C  - Will shut down the server</p>
+</li><li>
+<p>quit   - Will disconnect your session</p>
+</li><li>
+<p>help   - Prints a brief description of the commands</p>
+</li></ul>
+
+<h2 id="label-Help+">Help </h2>
+<ul><li>
+<p>look       - displays the contents of a room</p>
+</li><li>
+<p>chat       - sends &lt;message&gt; to all characters in the game</p>
+</li><li>
+<p>emote | !  - displays &lt;message&gt; to all characters in the room</p>
+</li><li>
+<p>quit       - quits the game (saves character)</p>
+</li><li>
+<p>help | ?   - displays help</p>
+</li><li>
+<p>get        - gets all objects in the room into your inventory</p>
+</li><li>
+<p>examine    - displays the contents of a room</p>
+</li><li>
+<p>say | “    - sends &lt;message&gt; to all characters in the room</p>
+</li><li>
+<p>go | &lt;ex&gt;  - go through the exit specified (ex. go west)</p>
+</li><li>
+<p>inventory  - displays chracter inventory</p>
+</li><li>
+<p>drop       - drops all objects in your inventory into the room</p>
+</li><li>
+<p>kill       - attempts to kill character (e.g. kill Bubba)</p>
+</li><li>
+<p>hello      - the hello social</p>
+</li><li>
+<p>who        - shows a list of all connected characters</p>
+</li><li>
+<p>@echoat    - echos input to location</p>
+</li><li>
+<p>@object    - creates a new object (ex. @object rose)</p>
+</li><li>
+<p>@reload    - reloads the command table</p>
+</li><li>
+<p>@room      - creates a new room and autolinks the exits using the exit
+names provided.</p>
+
+<pre>(ex. @room My Room north south)</pre>
+</li><li>
+<p>@set       - sets the description or timer for an object</p>
+
+<pre>Syntax:
+        @set desc #&lt;oid&gt;&lt;description&gt;
+        @set timer #&lt;oid&gt; &lt;on|off&gt;
+        (ex. @set desc #1 A beautiful rose.)</pre>
+</li><li>
+<p>@stats     - displays a statistical report of the database and cache if
+present</p>
+</li><li>
+<p>@color     - toggles colors on or off</p>
+</li><li>
+<p>@status    - displays session information</p>
+</li><li>
+<p>@memstats  - displays the memory statistics by scanning ruby’s object space</p>
+</li><li>
+<p>@dumpcache - inspects the cache (for debugging).</p>
+</li><li>
+<p>@shutdown  - shuts down the server</p>
+</li><li>
+<p>@trigger   - adds, deletes or shows triggers on an object</p>
+
+<pre>Syntax:
+       @trigger add #&lt;oid&gt; #&lt;scriptid&gt; &lt;eventtype&gt;
+       @trigger del #&lt;oid&gt; &lt;eventtype&gt;
+       @trigger show #&lt;oid&gt;
+       (ex. @trigger add #1 #5 arrive)</pre>
+</li><li>
+<p>@script    - adds, deletes or shows a script</p>
+
+<pre>Syntax:
+       @script add &lt;lang&gt; &lt;progname&gt;|&lt;code&gt;
+       @script del #&lt;scriptid&gt;
+       @script show #&lt;scriptid&gt;
+       (ex. @script add fart myprog
+            @script add boolexp (#234|#42)&amp;#34 )</pre>
+</li><li>
+<p>@edit      - Edits a string field on an object or system message.</p>
+
+<pre>Syntax:
+       @edit sysmsg &lt;name&gt;
+       @edit #&lt;oid&gt; &lt;field&gt;
+       (ex. @edit #7 desc)</pre>
+</li><li>
+<p>@gc        - runs garbage collection</p>
+</li><li>
+<p>@show      - Displays object</p>
+
+<pre>Syntax:
+       @show #&lt;oid&gt;|me
+       (ex. @show me)</pre>
+</li></ul>
+
+<h2 id="label-Contributors">Contributors</h2>
+
+<h3 id="label-TeensyMUD+contributers+list">TeensyMUD contributers list</h3>
+
+<p>Copyright© 2005 the contributors. All rights reserved.</p>
+
+<p>See LICENSE file for terms and conditions.</p>
+
+<p>Contributors</p>
+<ul><li>
+<p>Jon A. Lambert / Tyche   <a
+href="mailto:jlsysinc@alltel.net">jlsysinc@alltel.net</a></p>
+</li><li>
+<p>Chris Bailey</p>
+</li><li>
+<p>Matthew B. Gardner / Stormy</p>
+</li></ul>
+
+<h2 id="label-License">License</h2>
+
+<h3 id="label-TeensyMUD+Public+License">TeensyMUD Public License</h3>
+
+<p>Copyright© 2005 the contributors. All rights reserved.</p>
+
+<p>See CONTRIBUTORS file for list of the contributors.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a 
+copy of this software and associated documentation files, the rights to 
+use, copy, modify, create derivative works, merge, publish, distribute, 
+sublicense, and/or sell copies of this software, and to permit persons  to
+whom the software is furnished to do so, subject to the following 
+conditions:</p>
+
+<p>1) Redistribution in source code must retain the copyright information  and
+attributions in the original source code, the above copyright notice,  this
+list of conditions, the CONTRIBUTORS file and the following  disclaimer.</p>
+
+<p>2) Redistribution in binary form must reproduce the above copyright 
+notice, this list of conditions, and the following disclaimer in the 
+documentation and/or other materials provided with the distribution.</p>
+
+<p>3) The rights granted to you under this license automatically terminate 
+should you attempt to assert any patent claims against the licensor or 
+contributors, which in any way restrict the ability of any party to use 
+this software or portions thereof in any form under the terms of this 
+license.</p>
+
+<p>Disclaimer:  THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY
+KIND, EXPRESS  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN
+NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY  CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,  TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE  SOFTWARE OR THE
+USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+</div>
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

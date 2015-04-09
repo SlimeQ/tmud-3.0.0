@@ -1,0 +1,2256 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Cmd - TeensyMUD 3.0.0 Mud Server</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>cmd/teensy/cmd_chat.rb
+    <li>cmd/teensy/cmd_color.rb
+    <li>cmd/teensy/cmd_drop.rb
+    <li>cmd/teensy/cmd_dumpcache.rb
+    <li>cmd/teensy/cmd_edit.rb
+    <li>cmd/teensy/cmd_emote.rb
+    <li>cmd/teensy/cmd_gc.rb
+    <li>cmd/teensy/cmd_get.rb
+    <li>cmd/teensy/cmd_go.rb
+    <li>cmd/teensy/cmd_hello.rb
+    <li>cmd/teensy/cmd_help.rb
+    <li>cmd/teensy/cmd_inv.rb
+    <li>cmd/teensy/cmd_kill.rb
+    <li>cmd/teensy/cmd_look.rb
+    <li>cmd/teensy/cmd_memstats.rb
+    <li>cmd/teensy/cmd_object.rb
+    <li>cmd/teensy/cmd_quit.rb
+    <li>cmd/teensy/cmd_reload.rb
+    <li>cmd/teensy/cmd_room.rb
+    <li>cmd/teensy/cmd_say.rb
+    <li>cmd/teensy/cmd_script.rb
+    <li>cmd/teensy/cmd_set.rb
+    <li>cmd/teensy/cmd_show.rb
+    <li>cmd/teensy/cmd_shutdown.rb
+    <li>cmd/teensy/cmd_stats.rb
+    <li>cmd/teensy/cmd_status.rb
+    <li>cmd/teensy/cmd_trigger.rb
+    <li>cmd/teensy/cmd_who.rb
+    <li>cmd/tiny/cmd_get.rb
+    <li>cmd/tiny/cmd_shutdown.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-cmd_chat">#cmd_chat</a>
+    
+    <li><a href="#method-i-cmd_color">#cmd_color</a>
+    
+    <li><a href="#method-i-cmd_drop">#cmd_drop</a>
+    
+    <li><a href="#method-i-cmd_dumpcache">#cmd_dumpcache</a>
+    
+    <li><a href="#method-i-cmd_edit">#cmd_edit</a>
+    
+    <li><a href="#method-i-cmd_emote">#cmd_emote</a>
+    
+    <li><a href="#method-i-cmd_gc">#cmd_gc</a>
+    
+    <li><a href="#method-i-cmd_get">#cmd_get</a>
+    
+    <li><a href="#method-i-cmd_go">#cmd_go</a>
+    
+    <li><a href="#method-i-cmd_hello">#cmd_hello</a>
+    
+    <li><a href="#method-i-cmd_help">#cmd_help</a>
+    
+    <li><a href="#method-i-cmd_inv">#cmd_inv</a>
+    
+    <li><a href="#method-i-cmd_kill">#cmd_kill</a>
+    
+    <li><a href="#method-i-cmd_look">#cmd_look</a>
+    
+    <li><a href="#method-i-cmd_memstats">#cmd_memstats</a>
+    
+    <li><a href="#method-i-cmd_object">#cmd_object</a>
+    
+    <li><a href="#method-i-cmd_quit">#cmd_quit</a>
+    
+    <li><a href="#method-i-cmd_reload">#cmd_reload</a>
+    
+    <li><a href="#method-i-cmd_room">#cmd_room</a>
+    
+    <li><a href="#method-i-cmd_say">#cmd_say</a>
+    
+    <li><a href="#method-i-cmd_script">#cmd_script</a>
+    
+    <li><a href="#method-i-cmd_set">#cmd_set</a>
+    
+    <li><a href="#method-i-cmd_show">#cmd_show</a>
+    
+    <li><a href="#method-i-cmd_shutdown">#cmd_shutdown</a>
+    
+    <li><a href="#method-i-cmd_stats">#cmd_stats</a>
+    
+    <li><a href="#method-i-cmd_status">#cmd_status</a>
+    
+    <li><a href="#method-i-cmd_trigger">#cmd_trigger</a>
+    
+    <li><a href="#method-i-cmd_who">#cmd_who</a>
+    
+    <li><a href="#method-i-edit_display">#edit_display</a>
+    
+    <li><a href="#method-i-edit_parser">#edit_parser</a>
+    
+    <li><a href="#method-i-word_wrap">#word_wrap</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+    <li class="file"><a href="./TML.html">TML</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Farts.html">Farts</a>
+  
+    <li><a href="./Farts/AttributeSyntaxNode.html">Farts::AttributeSyntaxNode</a>
+  
+    <li><a href="./Farts/CallSyntaxNode.html">Farts::CallSyntaxNode</a>
+  
+    <li><a href="./Farts/CommandSyntaxNode.html">Farts::CommandSyntaxNode</a>
+  
+    <li><a href="./Farts/CommentSyntaxNode.html">Farts::CommentSyntaxNode</a>
+  
+    <li><a href="./Farts/EndSyntaxNode.html">Farts::EndSyntaxNode</a>
+  
+    <li><a href="./Farts/IfSyntaxNode.html">Farts::IfSyntaxNode</a>
+  
+    <li><a href="./Farts/Interpreter.html">Farts::Interpreter</a>
+  
+    <li><a href="./Farts/Lexer.html">Farts::Lexer</a>
+  
+    <li><a href="./Farts/Lib.html">Farts::Lib</a>
+  
+    <li><a href="./Farts/LiteralSyntaxNode.html">Farts::LiteralSyntaxNode</a>
+  
+    <li><a href="./Farts/LocalVarSyntaxNode.html">Farts::LocalVarSyntaxNode</a>
+  
+    <li><a href="./Farts/Parser.html">Farts::Parser</a>
+  
+    <li><a href="./Farts/ProgramSyntaxNode.html">Farts::ProgramSyntaxNode</a>
+  
+    <li><a href="./Farts/SyntaxNode.html">Farts::SyntaxNode</a>
+  
+    <li><a href="./SQLite.html">SQLite</a>
+  
+    <li><a href="./SQLite3.html">SQLite3</a>
+  
+    <li><a href="./SQLite3/Database.html">SQLite3::Database</a>
+  
+    <li><a href="./SQLite/Database.html">SQLite::Database</a>
+  
+    <li><a href="./TernaryTrie.html">TernaryTrie</a>
+  
+    <li><a href="./TernaryTrie/TNode.html">TernaryTrie::TNode</a>
+  
+    <li><a href="./ASCIICodes.html">ASCIICodes</a>
+  
+    <li><a href="./Acceptor.html">Acceptor</a>
+  
+    <li><a href="./Account.html">Account</a>
+  
+    <li><a href="./BoolExpParser.html">BoolExpParser</a>
+  
+    <li><a href="./CacheEntry.html">CacheEntry</a>
+  
+    <li><a href="./CacheManager.html">CacheManager</a>
+  
+    <li><a href="./CacheStats.html">CacheStats</a>
+  
+    <li><a href="./Character.html">Character</a>
+  
+    <li><a href="./Client.html">Client</a>
+  
+    <li><a href="./Cmd.html">Cmd</a>
+  
+    <li><a href="./ColorFilter.html">ColorFilter</a>
+  
+    <li><a href="./Command.html">Command</a>
+  
+    <li><a href="./Configuration.html">Configuration</a>
+  
+    <li><a href="./Connection.html">Connection</a>
+  
+    <li><a href="./Connector.html">Connector</a>
+  
+    <li><a href="./ConsoleClient.html">ConsoleClient</a>
+  
+    <li><a href="./CursesClient.html">CursesClient</a>
+  
+    <li><a href="./DbmStore.html">DbmStore</a>
+  
+    <li><a href="./DebugFilter.html">DebugFilter</a>
+  
+    <li><a href="./Dumper.html">Dumper</a>
+  
+    <li><a href="./Engine.html">Engine</a>
+  
+    <li><a href="./Event.html">Event</a>
+  
+    <li><a href="./EventManager.html">EventManager</a>
+  
+    <li><a href="./Exit.html">Exit</a>
+  
+    <li><a href="./Filter.html">Filter</a>
+  
+    <li><a href="./GameObject.html">GameObject</a>
+  
+    <li><a href="./GdbmStore.html">GdbmStore</a>
+  
+    <li><a href="./LineIO.html">LineIO</a>
+  
+    <li><a href="./Loader.html">Loader</a>
+  
+    <li><a href="./Log.html">Log</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Obj.html">Obj</a>
+  
+    <li><a href="./ObjCmd.html">ObjCmd</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./PacketIO.html">PacketIO</a>
+  
+    <li><a href="./ProtocolStack.html">ProtocolStack</a>
+  
+    <li><a href="./Publisher.html">Publisher</a>
+  
+    <li><a href="./Reactor.html">Reactor</a>
+  
+    <li><a href="./Room.html">Room</a>
+  
+    <li><a href="./Root.html">Root</a>
+  
+    <li><a href="./Script.html">Script</a>
+  
+    <li><a href="./SdbmStore.html">SdbmStore</a>
+  
+    <li><a href="./Session.html">Session</a>
+  
+    <li><a href="./SockIO.html">SockIO</a>
+  
+    <li><a href="./Sqlite3Store.html">Sqlite3Store</a>
+  
+    <li><a href="./SqliteStore.html">SqliteStore</a>
+  
+    <li><a href="./Store.html">Store</a>
+  
+    <li><a href="./String.html">String</a>
+  
+    <li><a href="./TelnetCodes.html">TelnetCodes</a>
+  
+    <li><a href="./TelnetFilter.html">TelnetFilter</a>
+  
+    <li><a href="./TerminalFilter.html">TerminalFilter</a>
+  
+    <li><a href="./Timer.html">Timer</a>
+  
+    <li><a href="./Utility.html">Utility</a>
+  
+    <li><a href="./VT100Codes.html">VT100Codes</a>
+  
+    <li><a href="./World.html">World</a>
+  
+    <li><a href="./XmlStore.html">XmlStore</a>
+  
+    <li><a href="./YamlStore.html">YamlStore</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Cmd</h1>
+
+  <div id="description" class="description">
+    <dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_chat.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.3.0</p>
+</dd><dt>date
+<dd>
+<p>08/31/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_color.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.5.3</p>
+</dd><dt>date
+<dd>
+<p>09/21/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_drop.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.2.0</p>
+</dd><dt>date
+<dd>
+<p>08/29/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_dumpcache.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.7.0</p>
+</dd><dt>date
+<dd>
+<p>01/13/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_edit.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.10.0</p>
+</dd><dt>date
+<dd>
+<p>06/25/2006</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005, 2006 by Jon A. Lambert All rights
+reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_emote.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.4.0</p>
+</dd><dt>date
+<dd>
+<p>09/12/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_gc.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.9.0</p>
+</dd><dt>date
+<dd>
+<p>03/15/2006</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_get.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.2.0</p>
+</dd><dt>date
+<dd>
+<p>08/29/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_go.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.10.0</p>
+</dd><dt>date
+<dd>
+<p>06/27/2006</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_hello.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.2.0</p>
+</dd><dt>date
+<dd>
+<p>08/29/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_help.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.4.0</p>
+</dd><dt>date
+<dd>
+<p>09/12/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_inv.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.2.0</p>
+</dd><dt>date
+<dd>
+<p>08/29/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_kill.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.3.0</p>
+</dd><dt>date
+<dd>
+<p>08/31/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_look.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.2.0</p>
+</dd><dt>date
+<dd>
+<p>08/29/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_memstats.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.7.0</p>
+</dd><dt>date
+<dd>
+<p>01/13/2006</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_object.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.2.0</p>
+</dd><dt>date
+<dd>
+<p>08/29/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_quit.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.2.0</p>
+</dd><dt>date
+<dd>
+<p>08/29/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_reload.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.4.0</p>
+</dd><dt>date
+<dd>
+<p>09/12/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_room.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.10.0</p>
+</dd><dt>date
+<dd>
+<p>06/25/2006</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_say.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.2.0</p>
+</dd><dt>date
+<dd>
+<p>08/29/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_script.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.8.0</p>
+</dd><dt>date
+<dd>
+<p>02/21/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005, 2006 by Jon A. Lambert All rights
+reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_set.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.8.0</p>
+</dd><dt>date
+<dd>
+<p>02/21/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005, 2006 by Jon A. Lambert All rights
+reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_show.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.9.0</p>
+</dd><dt>date
+<dd>
+<p>03/10/2006</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005, 2006 by Jon A. Lambert All rights
+reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_shutdown.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.8.0</p>
+</dd><dt>date
+<dd>
+<p>01/19/2006</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005, 2006 by Jon A. Lambert All rights
+reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_stats.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.7.0</p>
+</dd><dt>date
+<dd>
+<p>01/13/2006</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_status.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.5.3</p>
+</dd><dt>date
+<dd>
+<p>09/21/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_trigger.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.8.0</p>
+</dd><dt>date
+<dd>
+<p>02/21/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005, 2006 by Jon A. Lambert All rights
+reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_who.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.3.0</p>
+</dd><dt>date
+<dd>
+<p>08/31/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_get.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.2.0</p>
+</dd><dt>date
+<dd>
+<p>08/29/2005</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005 by Jon A. Lambert All rights reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+<dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>cmd_shutdown.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.9.0</p>
+</dd><dt>date
+<dd>
+<p>01/19/2006</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005, 2006 by Jon A. Lambert All rights
+reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-cmd_chat" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_chat</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>sends &lt;message&gt; to all characters in the game</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_chat-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_chat.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_chat</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>, <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;What are you trying to tell everyone?&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-node">&quot;[COLOR Magenta]You chat, \&quot;#{args}\&quot;.[/COLOR]&quot;</span>)
+    <span class="ruby-identifier">world</span>.<span class="ruby-identifier">connected_characters</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pid</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">id</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">pid</span>
+        <span class="ruby-identifier">add_event</span>(<span class="ruby-identifier">id</span>,<span class="ruby-identifier">pid</span>,<span class="ruby-value">:show</span>,
+          <span class="ruby-node">&quot;[COLOR Magenta]#{name} chats, \&quot;#{args}\&quot;.[/COLOR]&quot;</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_chat-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_chat-method -->
+
+    
+      <div id="method-i-cmd_color" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_color</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>toggles colors on or off</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_color-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_color.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_color</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">sendto</span> <span class="ruby-ivar">@account</span>.<span class="ruby-identifier">toggle_color</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_color-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_color-method -->
+
+    
+      <div id="method-i-cmd_drop" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_drop</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>drops all objects in your inventory into the room</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_drop-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_drop.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_drop</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">objects</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">q</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">add_event</span>(<span class="ruby-identifier">id</span>,<span class="ruby-identifier">q</span>.<span class="ruby-identifier">id</span>,<span class="ruby-value">:drop</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_drop-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_drop-method -->
+
+    
+      <div id="method-i-cmd_dumpcache" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_dumpcache</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Look command displays the contents of a room</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_dumpcache-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_dumpcache.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_dumpcache</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">sendto</span>(<span class="ruby-constant">Engine</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">db</span>.<span class="ruby-identifier">inspect</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_dumpcache-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_dumpcache-method -->
+
+    
+      <div id="method-i-cmd_edit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_edit</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@edits a string field on an object Syntax:</p>
+
+<pre>@edit #&lt;id&gt; &lt;field&gt;
+@edit sysmsg &lt;field&gt;</pre>
+
+<p>(ex. @edit #1 desc</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_edit-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_edit.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_edit</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>, <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;What??&quot;</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rsysmsg\s+(\w+)/</span>
+    <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:edit</span>
+    <span class="ruby-ivar">@editobj</span> = <span class="ruby-identifier">world</span>.<span class="ruby-identifier">msgs</span>
+    <span class="ruby-ivar">@editfield</span> = <span class="ruby-node">$1</span>.<span class="ruby-identifier">intern</span>
+    <span class="ruby-ivar">@editstr</span> = <span class="ruby-identifier">world</span>.<span class="ruby-identifier">msgs</span>[<span class="ruby-node">$1</span>.<span class="ruby-identifier">intern</span>] <span class="ruby-operator">||</span> <span class="ruby-string">''</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-identifier">edit_display</span>(<span class="ruby-ivar">@editstr</span>))
+  <span class="ruby-keyword">when</span> <span class="ruby-node">%r#(\d+)\s+(\w+)/</span>
+    <span class="ruby-identifier">o</span> = <span class="ruby-identifier">get_object</span>(<span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">o</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">GameObject</span>, <span class="ruby-constant">Room</span>, <span class="ruby-constant">Character</span>, <span class="ruby-constant">Script</span>, <span class="ruby-constant">Exit</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-node">$2</span>) <span class="ruby-operator">&amp;&amp;</span>
+         <span class="ruby-identifier">o</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-node">&quot;#$2=&quot;</span>) <span class="ruby-operator">&amp;&amp;</span>
+         <span class="ruby-identifier">o</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">$2</span>).<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+
+        <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:edit</span>
+        <span class="ruby-ivar">@editobj</span> = <span class="ruby-identifier">o</span>
+        <span class="ruby-ivar">@editfield</span> = <span class="ruby-node">$2</span>
+        <span class="ruby-ivar">@editstr</span> = <span class="ruby-identifier">o</span>.<span class="ruby-identifier">send</span> <span class="ruby-node">$2</span>
+
+        <span class="ruby-identifier">sendto</span>(<span class="ruby-identifier">edit_display</span>(<span class="ruby-ivar">@editstr</span>))
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">sendto</span>(<span class="ruby-node">&quot;Field #$2 not found on object.&quot;</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;No object.&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;What??&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_edit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_edit-method -->
+
+    
+      <div id="method-i-cmd_emote" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_emote</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>sends &lt;message&gt; to all characters in the room</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_emote-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_emote.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_emote</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>, <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;What are you trying to emote?&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-node">&quot;You #{args}.&quot;</span>)
+    <span class="ruby-identifier">get_object</span>(<span class="ruby-identifier">location</span>).<span class="ruby-identifier">characters</span>(<span class="ruby-identifier">id</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">add_event</span>(<span class="ruby-identifier">id</span>,<span class="ruby-identifier">p</span>.<span class="ruby-identifier">id</span>,<span class="ruby-value">:show</span>,<span class="ruby-node">&quot;#{name} #{args}.&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_emote-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_emote-method -->
+
+    
+      <div id="method-i-cmd_gc" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_gc</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This command runs garbage collection</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_gc-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_gc.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_gc</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-constant">GC</span>.<span class="ruby-identifier">start</span>
+  <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;Garbage collector run&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_gc-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_gc-method -->
+
+    
+      <div id="method-i-cmd_get" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_get</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>gets all objects in the room into your inventory</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_get-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_get.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_get</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">get_object</span>(<span class="ruby-identifier">location</span>).<span class="ruby-identifier">objects</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">q</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">add_event</span>(<span class="ruby-identifier">id</span>,<span class="ruby-identifier">q</span>.<span class="ruby-identifier">id</span>,<span class="ruby-value">:get</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_get-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_get-method -->
+
+    
+      <div id="method-i-cmd_go" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_go</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>sends &lt;message&gt; to all characters in the room</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_go-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_go.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_go</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>, <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;Where do you want to go?&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">ex</span> = []
+    <span class="ruby-identifier">ext</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">get_object</span>(<span class="ruby-identifier">location</span>).<span class="ruby-identifier">exits</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">exid</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">ext</span> = <span class="ruby-identifier">get_object</span>(<span class="ruby-identifier">exid</span>)
+      <span class="ruby-identifier">ex</span> = <span class="ruby-identifier">ext</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r;/</span>).<span class="ruby-identifier">grep</span>(<span class="ruby-node">%r^#{args}/</span>)
+      <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">ex</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;Can't find that place&quot;</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">ln</span> = <span class="ruby-string">&quot;Which did you mean, &quot;</span>
+      <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ln</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\'&quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\' &quot;</span>}
+      <span class="ruby-identifier">ln</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;?&quot;</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-identifier">ln</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">add_event</span>(<span class="ruby-identifier">id</span>,<span class="ruby-identifier">ext</span>.<span class="ruby-identifier">id</span>,<span class="ruby-value">:leave</span>, <span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_go-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_go-method -->
+
+    
+      <div id="method-i-cmd_hello" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_hello</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The hello social command</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_hello-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_hello.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_hello</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;say hello&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_hello-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_hello-method -->
+
+    
+      <div id="method-i-cmd_help" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_help</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The help command</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_help-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_help.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_help</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>, <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;====================HELP=======================&quot;</span>)
+    <span class="ruby-identifier">world</span>.<span class="ruby-identifier">cmds</span>.<span class="ruby-identifier">to_hash</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">h</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&quot;%-10s - %s&quot;</span>, <span class="ruby-identifier">h</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">h</span>.<span class="ruby-identifier">help</span>))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">q</span> = <span class="ruby-identifier">world</span>.<span class="ruby-identifier">cmds</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">q</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;====================HELP=======================&quot;</span>)
+      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">h</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">sendto</span>(<span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&quot;%-10s - %s&quot;</span>, <span class="ruby-identifier">h</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">h</span>.<span class="ruby-identifier">help</span>))
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">sendto</span> <span class="ruby-string">&quot;No help on that.&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_help-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_help-method -->
+
+    
+      <div id="method-i-cmd_inv" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_inv</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The inventory command</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_inv-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_inv.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_inv</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;=== Inventory ===&quot;</span>)
+  <span class="ruby-identifier">objects</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">add_event</span>(<span class="ruby-identifier">id</span>,<span class="ruby-identifier">x</span>.<span class="ruby-identifier">id</span>,<span class="ruby-value">:describe</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_inv-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_inv-method -->
+
+    
+      <div id="method-i-cmd_kill" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_kill</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This kills a character anywhere - it’s link death (30% chance)</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_kill-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_kill.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_kill</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>, <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;Who do you want to kill?&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">d</span> = <span class="ruby-identifier">world</span>.<span class="ruby-identifier">all_characters</span>.<span class="ruby-identifier">find</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">pid</span><span class="ruby-operator">|</span> <span class="ruby-identifier">args</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">get_object</span>(<span class="ruby-identifier">pid</span>).<span class="ruby-identifier">name</span> }
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">d</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;Can't find them.&quot;</span>)
+      <span class="ruby-keyword">return</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">d</span> = <span class="ruby-identifier">get_object</span>(<span class="ruby-identifier">d</span>)  <span class="ruby-comment"># get object</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">rand</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0.3</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-node">&quot;You kill #{d.name}.&quot;</span>)
+      <span class="ruby-identifier">world</span>.<span class="ruby-identifier">connected_characters</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">pid</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">pid</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">id</span>
+          <span class="ruby-identifier">add_event</span>(<span class="ruby-identifier">id</span>,<span class="ruby-identifier">pid</span>,<span class="ruby-value">:show</span>,<span class="ruby-node">&quot;#{name} kills #{d.name}.&quot;</span>)
+        <span class="ruby-keyword">end</span>
+      }
+      <span class="ruby-identifier">d</span>.<span class="ruby-identifier">account</span>.<span class="ruby-identifier">disconnect</span>(<span class="ruby-string">&quot;You have been pwn3d!&quot;</span>)
+      <span class="ruby-comment"># delete_object(d)  Dont delete character, it's annoying</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-node">&quot;You attacks and misses #{d.name}.&quot;</span>)
+      <span class="ruby-identifier">world</span>.<span class="ruby-identifier">connected_characters</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">pid</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">pid</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">id</span>
+          <span class="ruby-identifier">add_event</span>(<span class="ruby-identifier">id</span>,<span class="ruby-identifier">pid</span>,<span class="ruby-value">:show</span>,<span class="ruby-node">&quot;#{name} attacks and misses #{d.name}.&quot;</span>)
+        <span class="ruby-keyword">end</span>
+      }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_kill-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_kill-method -->
+
+    
+      <div id="method-i-cmd_look" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_look</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Look command displays the contents of a room</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_look-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_look.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_look</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">place</span> = <span class="ruby-identifier">get_object</span>(<span class="ruby-identifier">location</span>)
+  <span class="ruby-identifier">add_event</span>(<span class="ruby-identifier">id</span>,<span class="ruby-identifier">location</span>,<span class="ruby-value">:describe</span>)
+  <span class="ruby-identifier">place</span>.<span class="ruby-identifier">objects</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">add_event</span>(<span class="ruby-identifier">id</span>,<span class="ruby-identifier">x</span>.<span class="ruby-identifier">id</span>,<span class="ruby-value">:describe</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">place</span>.<span class="ruby-identifier">characters</span>(<span class="ruby-identifier">id</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">add_event</span>(<span class="ruby-identifier">id</span>,<span class="ruby-identifier">x</span>.<span class="ruby-identifier">id</span>,<span class="ruby-value">:describe</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">add_event</span>(<span class="ruby-identifier">id</span>,<span class="ruby-identifier">location</span>,<span class="ruby-value">:describe_exits</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_look-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_look-method -->
+
+    
+      <div id="method-i-cmd_memstats" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_memstats</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The memory stats command</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_memstats-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_memstats.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_memstats</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">sendto</span>(<span class="ruby-identifier">world</span>.<span class="ruby-identifier">memstats</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_memstats-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_memstats-method -->
+
+    
+      <div id="method-i-cmd_object" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_object</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>sets the description for an object (ex. @set #1 A beautiful rose.)</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_object-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_object.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_object</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r(.*)/</span>
+    <span class="ruby-identifier">newobj</span> = <span class="ruby-constant">GameObject</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">$1</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">location</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">newobj</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-string">&quot;Unable to create object.&quot;</span>
+      <span class="ruby-identifier">sendto</span> <span class="ruby-string">&quot;System error: unable to create object.&quot;</span>
+      <span class="ruby-keyword">return</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">put_object</span>(<span class="ruby-identifier">newobj</span>)
+    <span class="ruby-identifier">get_object</span>(<span class="ruby-identifier">location</span>).<span class="ruby-identifier">add_contents</span>(<span class="ruby-identifier">newobj</span>.<span class="ruby-identifier">id</span>)
+    <span class="ruby-identifier">sendto</span> <span class="ruby-string">&quot;Ok.&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;What!!?&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_object-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_object-method -->
+
+    
+      <div id="method-i-cmd_quit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_quit</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The quit command</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_quit-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_quit.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_quit</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-ivar">@account</span>.<span class="ruby-identifier">disconnect</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_quit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_quit-method -->
+
+    
+      <div id="method-i-cmd_reload" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_reload</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This reloads the commands</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_reload-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_reload.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_reload</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">world</span>.<span class="ruby-identifier">cmds</span>, <span class="ruby-identifier">world</span>.<span class="ruby-identifier">ocmds</span> = <span class="ruby-constant">Command</span>.<span class="ruby-identifier">load</span>
+  <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;Command table reloaded.&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_reload-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_reload-method -->
+
+    
+      <div id="method-i-cmd_room" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_room</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>creates a new room and autolinks the exits using the exit names provided.
+(ex. @room My <a href="Room.html">Room</a> north south)</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_room-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_room.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_room</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r(.*) (.*) (.*)/</span>
+    <span class="ruby-identifier">d</span>=<span class="ruby-constant">Room</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">$1</span>, <span class="ruby-identifier">id</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-string">&quot;Unable to create room.&quot;</span>
+      <span class="ruby-identifier">sendto</span> <span class="ruby-string">&quot;System error: unable to create room.&quot;</span>
+      <span class="ruby-keyword">return</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">put_object</span>(<span class="ruby-identifier">d</span>)
+    <span class="ruby-identifier">curr</span> = <span class="ruby-identifier">get_object</span>(<span class="ruby-identifier">location</span>)
+    <span class="ruby-identifier">e1</span> = <span class="ruby-constant">Exit</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">$2</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">curr</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">d</span>.<span class="ruby-identifier">id</span>)
+    <span class="ruby-identifier">curr</span>.<span class="ruby-identifier">exits</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">e1</span>.<span class="ruby-identifier">id</span>
+    <span class="ruby-identifier">put_object</span>(<span class="ruby-identifier">e1</span>)
+    <span class="ruby-identifier">e2</span> = <span class="ruby-constant">Exit</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">$3</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">d</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">curr</span>.<span class="ruby-identifier">id</span>)
+    <span class="ruby-identifier">d</span>.<span class="ruby-identifier">exits</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">e2</span>.<span class="ruby-identifier">id</span>
+    <span class="ruby-identifier">put_object</span>(<span class="ruby-identifier">e2</span>)
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;Ok.&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;say what??&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_room-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_room-method -->
+
+    
+      <div id="method-i-cmd_say" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_say</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>sends &lt;message&gt; to all characters in the room</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_say-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_say.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_say</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>, <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;What are you trying to say?&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-node">&quot;You say, \&quot;#{args}\&quot;.&quot;</span>)
+    <span class="ruby-identifier">get_object</span>(<span class="ruby-identifier">location</span>).<span class="ruby-identifier">characters</span>(<span class="ruby-identifier">id</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">add_event</span>(<span class="ruby-identifier">id</span>,<span class="ruby-identifier">p</span>.<span class="ruby-identifier">id</span>,<span class="ruby-value">:show</span>,<span class="ruby-node">&quot;#{name} says, \&quot;#{args}\&quot;.&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_say-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_say-method -->
+
+    
+      <div id="method-i-cmd_script" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_script</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>adds, deletes, lists, or  a script Syntax:</p>
+
+<pre>@script add &lt;lang&gt; &lt;progname&gt;|&lt;code&gt;
+@script del #&lt;scriptid&gt;
+@script show #&lt;scriptid&gt;</pre>
+
+<p>(ex. @script add fart myprog) (ex. @script add boolexp #234|#42&amp;#34 )</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_script-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_script.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_script</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">%rdel\s+#(\d+)/</span>
+    <span class="ruby-identifier">s</span> = <span class="ruby-identifier">get_object</span>(<span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">s</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Script</span>
+      <span class="ruby-identifier">delete_object</span>(<span class="ruby-identifier">s</span>.<span class="ruby-identifier">id</span>)
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-node">&quot;Script #$1 deleted.&quot;</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;No script.&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%radd\s+(\w+)\s+(.*)/</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-node">$1</span>.<span class="ruby-identifier">intern</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:fart</span>
+      <span class="ruby-identifier">s</span> = <span class="ruby-constant">Script</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">$2</span>.<span class="ruby-identifier">strip</span>, <span class="ruby-identifier">id</span>, <span class="ruby-node">$1</span>.<span class="ruby-identifier">intern</span>)
+      <span class="ruby-identifier">put_object</span>(<span class="ruby-identifier">s</span>)
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-node">&quot;Script #{s.id} added.&quot;</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:boolexp</span>
+      <span class="ruby-identifier">s</span> = <span class="ruby-constant">Script</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">id</span>, <span class="ruby-node">$1</span>.<span class="ruby-identifier">intern</span>)
+      <span class="ruby-identifier">s</span>.<span class="ruby-identifier">load</span>(<span class="ruby-node">$2</span>.<span class="ruby-identifier">strip</span>)
+      <span class="ruby-identifier">put_object</span>(<span class="ruby-identifier">s</span>)
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-node">&quot;Script #{s.id} added.&quot;</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;No language.&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">%rshow\s+#(\d+)/</span>
+    <span class="ruby-identifier">s</span> = <span class="ruby-identifier">get_object</span>(<span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">s</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Script</span>
+      <span class="ruby-identifier">s</span>.<span class="ruby-identifier">load</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">s</span>.<span class="ruby-identifier">src</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-identifier">s</span>.<span class="ruby-identifier">src</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;No script.&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;What??&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_script-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_script-method -->
+
+    
+      <div id="method-i-cmd_set" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_set</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>sets the description or timer for an object Syntax:</p>
+
+<pre>@set desc #&lt;id&gt; &lt;description&gt;
+@set key #&lt;id&gt; &lt;description&gt;
+@set timer #&lt;id&gt; &lt;on|off&gt;</pre>
+
+<p>(ex. @set desc #1 A beautiful rose.)</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_set-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_set.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_set</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>, <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;What??&quot;</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-node">%rdesc\s+#(\d+)\s+(.*)/</span>
+    <span class="ruby-identifier">o</span> = <span class="ruby-identifier">get_object</span>(<span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">o</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">0</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;No object.&quot;</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">o</span>.<span class="ruby-identifier">desc</span> = <span class="ruby-node">$2</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-node">&quot;Object #&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot; description set.&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">%rkey\s+#(\d+)\s+(.*)/</span>
+    <span class="ruby-identifier">o</span> = <span class="ruby-identifier">get_object</span>(<span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">o</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">0</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;No object.&quot;</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">o</span>.<span class="ruby-identifier">key</span> = <span class="ruby-node">$2</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-node">&quot;Object #&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot; key set.&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">%rtimer\s+#(\d+)\s+(on|off)\s+(.*)/</span>
+    <span class="ruby-identifier">o</span> = <span class="ruby-identifier">get_object</span>(<span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">o</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;No object.&quot;</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-node">$2</span> <span class="ruby-operator">==</span> <span class="ruby-string">'on'</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-node">$3</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r(\w+)\s+(\d+)/</span>
+          <span class="ruby-identifier">world</span>.<span class="ruby-identifier">set_timer</span>(<span class="ruby-identifier">o</span>.<span class="ruby-identifier">id</span>, <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-node">$2</span>.<span class="ruby-identifier">to_i</span>)
+          <span class="ruby-identifier">sendto</span>(<span class="ruby-node">&quot;Object ##{o.id} registered with timer.&quot;</span>)
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;Bad symbol or missing time&quot;</span>)
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-node">$3</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r(\w+)/</span>
+          <span class="ruby-identifier">world</span>.<span class="ruby-identifier">unset_timer</span>(<span class="ruby-identifier">o</span>.<span class="ruby-identifier">id</span>, <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_sym</span>)
+          <span class="ruby-identifier">sendto</span>(<span class="ruby-node">&quot;Object ##{o.id} unregistered with timer.&quot;</span>)
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;Bad symbol&quot;</span>)
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;What??&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_set-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_set-method -->
+
+    
+      <div id="method-i-cmd_show" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_show</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>displays object Syntax:</p>
+
+<pre>@show #&lt;oid&gt;|me</pre>
+
+<p>(ex. @show me)</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_show-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_show.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_show</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">%r#(\d+)/</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-identifier">get_object</span>(<span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">inspect</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rme/</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-identifier">get_object</span>(<span class="ruby-identifier">id</span>).<span class="ruby-identifier">inspect</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;What??&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_show-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_show-method -->
+
+    
+      <div id="method-i-cmd_shutdown" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_shutdown</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The shutdown command</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_shutdown-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_shutdown.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_shutdown</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-constant">Engine</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">shutdown</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_shutdown-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_shutdown-method -->
+
+    
+      <div id="method-i-cmd_stats" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_stats</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The database stats command</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_stats-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_stats.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_stats</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">sendto</span>(<span class="ruby-constant">Engine</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">db</span>.<span class="ruby-identifier">stats</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_stats-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_stats-method -->
+
+    
+      <div id="method-i-cmd_status" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_status</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>displays session information</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_status-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_status.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_status</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">sendto</span> <span class="ruby-ivar">@account</span>.<span class="ruby-identifier">status_rept</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_status-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_status-method -->
+
+    
+      <div id="method-i-cmd_trigger" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_trigger</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>adds, deletes, or shows triggers on an object Syntax:</p>
+
+<pre>@trigger add #&lt;id&gt; #&lt;scriptid&gt; &lt;eventtype&gt;
+@trigger del #&lt;id&gt; &lt;eventtype&gt;
+@trigger show #&lt;id&gt;</pre>
+
+<p>(ex. @trigger add #1 myprog arrive)</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_trigger-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_trigger.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_trigger</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>, <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;What??&quot;</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-node">%rdel\s+#(\d+)\s+(\w+)/</span>
+    <span class="ruby-identifier">o</span> = <span class="ruby-identifier">get_object</span>(<span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">o</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">GameObject</span>, <span class="ruby-constant">Room</span>, <span class="ruby-constant">Character</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">get_trigger</span>(<span class="ruby-node">$2</span>)
+        <span class="ruby-identifier">o</span>.<span class="ruby-identifier">delete_trigger</span>(<span class="ruby-node">$2</span>)
+        <span class="ruby-identifier">sendto</span>(<span class="ruby-node">&quot;Object ##$1 trigger deleted.&quot;</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">sendto</span>(<span class="ruby-node">&quot;Trigger ##$2 not found on object.&quot;</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;No object.&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">%radd\s+#(\d+)\s+#(\d+)\s+(\w+)/</span>
+    <span class="ruby-identifier">o</span> = <span class="ruby-identifier">get_object</span>(<span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">o</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">GameObject</span>, <span class="ruby-constant">Room</span>, <span class="ruby-constant">Character</span>
+      <span class="ruby-identifier">s</span> = <span class="ruby-identifier">get_object</span>(<span class="ruby-node">$2</span>.<span class="ruby-identifier">to_i</span>)
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">s</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Script</span>
+        <span class="ruby-identifier">o</span>.<span class="ruby-identifier">add_trigger</span>(<span class="ruby-node">$3</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">id</span>)
+        <span class="ruby-identifier">sendto</span>(<span class="ruby-node">&quot;Object ##$1 trigger added.&quot;</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;No script.&quot;</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;No object.&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">%rshow\s+#(\d+)/</span>
+    <span class="ruby-identifier">o</span> = <span class="ruby-identifier">get_object</span>(<span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">o</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">GameObject</span>, <span class="ruby-constant">Room</span>, <span class="ruby-constant">Character</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;===========TRIGGERS============&quot;</span>)
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&quot;%-15s %-15s&quot;</span>, <span class="ruby-string">&quot;Event&quot;</span>, <span class="ruby-string">&quot;Program&quot;</span>))
+      <span class="ruby-identifier">o</span>.<span class="ruby-identifier">triggers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">e</span>, <span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">sendto</span>(<span class="ruby-identifier">sprintf</span>(<span class="ruby-node">&quot;%-15s #%d&quot;</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">id2name</span>, <span class="ruby-identifier">t</span>))
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;No object.&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;What??&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_trigger-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_trigger-method -->
+
+    
+      <div id="method-i-cmd_who" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cmd_who</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>shows a list of all connected characters</p>
+          
+
+          
+          <div class="method-source-code" id="cmd_who-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_who.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cmd_who</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;=== Who List ===&quot;</span>)
+  <span class="ruby-identifier">world</span>.<span class="ruby-identifier">connected_characters</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">pid</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sendto</span>(<span class="ruby-identifier">get_object</span>(<span class="ruby-identifier">pid</span>).<span class="ruby-identifier">name</span>)}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cmd_who-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cmd_who-method -->
+
+    
+      <div id="method-i-edit_display" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_display</span><span
+            class="method-args">(str)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit_display-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_edit.rb, line 55</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">edit_display</span>(<span class="ruby-identifier">str</span>)
+    <span class="ruby-identifier">header</span> =<span class="ruby-string">&quot;======== Teensy String Editor ========
+   Type .h on a new line for help
+ Terminate with a @ on a blank line.
+======================================
+&quot;</span>
+    <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">header</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r^/</span>){<span class="ruby-node">&quot;#{i+=1}: &quot;</span>}
+  <span class="ruby-keyword">end</span></pre>
+          </div><!-- edit_display-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- edit_display-method -->
+
+    
+      <div id="method-i-edit_parser" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_parser</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit_parser-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_edit.rb, line 73</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">edit_parser</span>(<span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-string">&quot;What??&quot;</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^\.h/</span>
+      <span class="ruby-identifier">sendto</span> <span class="ruby-string">&quot;@edit help (commands on blank line):
+.r /old/new/     - replace a substring
+.h               - get help (this info)
+.s               - show string so far
+.ww [width]      - word wrap string (width optional)
+                   defaults to 76
+.c               - clear string so far
+.ld &lt;num&gt;        - delete line &lt;num&gt;
+.li &lt;num&gt; &lt;txt&gt;  - insert &lt;txt&gt; before line &lt;num&gt;
+.lr &lt;num&gt; &lt;txt&gt;  - replace line &lt;num&gt; with &lt;txt&gt;
+@                - end string
+&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^\.c/</span>
+      <span class="ruby-ivar">@editstr</span> = <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^\.s/</span>
+      <span class="ruby-identifier">sendto</span>(<span class="ruby-identifier">edit_display</span>(<span class="ruby-ivar">@editstr</span>))
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^\.r\s+\/(.+)?\/(.+)?\//</span>
+      <span class="ruby-ivar">@editstr</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">$1</span>, <span class="ruby-string">'\2'</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^\.ww\s+(\d+)/</span>, <span class="ruby-regexp">%r^\.ww/</span>
+      <span class="ruby-ivar">@editstr</span> = <span class="ruby-identifier">word_wrap</span>(<span class="ruby-ivar">@editstr</span>, <span class="ruby-node">$1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span> <span class="ruby-operator">?</span> <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">:</span> <span class="ruby-value">76</span> )
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^\.ld\s+(\d+)/</span>
+      <span class="ruby-identifier">idx</span> = <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">idx</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">idx</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">lines</span> = <span class="ruby-ivar">@editstr</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+      <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">delete_at</span>(<span class="ruby-identifier">idx</span>)
+      <span class="ruby-ivar">@editstr</span> = <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^\.li\s+(\d+)\s+(.*)?$/</span>
+      <span class="ruby-identifier">idx</span> = <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">idx</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">idx</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">nl</span> = <span class="ruby-node">$2</span>
+      <span class="ruby-identifier">lines</span> = <span class="ruby-ivar">@editstr</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+      <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-identifier">idx</span>, <span class="ruby-identifier">nl</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\n&quot;</span>)
+      <span class="ruby-ivar">@editstr</span> = <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^\.lr\s+(\d+)\s+(.*)?$/</span>
+      <span class="ruby-identifier">idx</span> = <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">idx</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">idx</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">nl</span> = <span class="ruby-node">$2</span>
+      <span class="ruby-identifier">lines</span> = <span class="ruby-ivar">@editstr</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+      <span class="ruby-identifier">lines</span>[<span class="ruby-identifier">idx</span>] = <span class="ruby-identifier">nl</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\n&quot;</span>
+      <span class="ruby-ivar">@editstr</span> = <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^@/</span>
+      <span class="ruby-ivar">@mode</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@editobj</span>.<span class="ruby-identifier">object_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">world</span>.<span class="ruby-identifier">msgs</span>.<span class="ruby-identifier">object_id</span>  <span class="ruby-comment"># detect sysmsgs</span>
+        <span class="ruby-ivar">@editobj</span>.<span class="ruby-identifier">send</span>(<span class="ruby-string">&quot;[]=&quot;</span>, <span class="ruby-ivar">@editfield</span>, <span class="ruby-ivar">@editstr</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-ivar">@editobj</span>.<span class="ruby-identifier">send</span>(<span class="ruby-ivar">@editfield</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;=&quot;</span>, <span class="ruby-ivar">@editstr</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^\./</span>
+      <span class="ruby-identifier">sendto</span> <span class="ruby-string">&quot;Invalid command.&quot;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@editstr</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span></pre>
+          </div><!-- edit_parser-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- edit_parser-method -->
+
+    
+      <div id="method-i-word_wrap" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">word_wrap</span><span
+            class="method-args">(s, len)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="word_wrap-source">
+            <pre><span class="ruby-comment"># File cmd/teensy/cmd_edit.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">word_wrap</span>(<span class="ruby-identifier">s</span>, <span class="ruby-identifier">len</span>)
+  <span class="ruby-identifier">str</span> = <span class="ruby-identifier">s</span>
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%r\n/</span>,<span class="ruby-string">' '</span>);<span class="ruby-identifier">str</span>.<span class="ruby-identifier">squeeze!</span>(<span class="ruby-string">' '</span>)
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">%r(\S{#{len}})(?=\S)/</span>,<span class="ruby-string">'\1 '</span>)
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-node">%r(.{1,#{len}})(?:\s+|$)/</span>).<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- word_wrap-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- word_wrap-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class World - TeensyMUD 3.0.0 Mud Server</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/core/world.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Root.html">Root</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-add_admin">#add_admin</a>
+    
+    <li><a href="#method-i-add_builder">#add_builder</a>
+    
+    <li><a href="#method-i-is_admin-3F">#is_admin?</a>
+    
+    <li><a href="#method-i-is_builder-3F">#is_builder?</a>
+    
+    <li><a href="#method-i-is_owner-3F">#is_owner?</a>
+    
+    <li><a href="#method-i-memstats">#memstats</a>
+    
+    <li><a href="#method-i-rem_admin">#rem_admin</a>
+    
+    <li><a href="#method-i-rem_builder">#rem_builder</a>
+    
+    <li><a href="#method-i-set_timer">#set_timer</a>
+    
+    <li><a href="#method-i-shutdown">#shutdown</a>
+    
+    <li><a href="#method-i-startup">#startup</a>
+    
+    <li><a href="#method-i-unset_timer">#unset_timer</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+    <li class="file"><a href="./TML.html">TML</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Farts.html">Farts</a>
+  
+    <li><a href="./Farts/AttributeSyntaxNode.html">Farts::AttributeSyntaxNode</a>
+  
+    <li><a href="./Farts/CallSyntaxNode.html">Farts::CallSyntaxNode</a>
+  
+    <li><a href="./Farts/CommandSyntaxNode.html">Farts::CommandSyntaxNode</a>
+  
+    <li><a href="./Farts/CommentSyntaxNode.html">Farts::CommentSyntaxNode</a>
+  
+    <li><a href="./Farts/EndSyntaxNode.html">Farts::EndSyntaxNode</a>
+  
+    <li><a href="./Farts/IfSyntaxNode.html">Farts::IfSyntaxNode</a>
+  
+    <li><a href="./Farts/Interpreter.html">Farts::Interpreter</a>
+  
+    <li><a href="./Farts/Lexer.html">Farts::Lexer</a>
+  
+    <li><a href="./Farts/Lib.html">Farts::Lib</a>
+  
+    <li><a href="./Farts/LiteralSyntaxNode.html">Farts::LiteralSyntaxNode</a>
+  
+    <li><a href="./Farts/LocalVarSyntaxNode.html">Farts::LocalVarSyntaxNode</a>
+  
+    <li><a href="./Farts/Parser.html">Farts::Parser</a>
+  
+    <li><a href="./Farts/ProgramSyntaxNode.html">Farts::ProgramSyntaxNode</a>
+  
+    <li><a href="./Farts/SyntaxNode.html">Farts::SyntaxNode</a>
+  
+    <li><a href="./SQLite.html">SQLite</a>
+  
+    <li><a href="./SQLite3.html">SQLite3</a>
+  
+    <li><a href="./SQLite3/Database.html">SQLite3::Database</a>
+  
+    <li><a href="./SQLite/Database.html">SQLite::Database</a>
+  
+    <li><a href="./TernaryTrie.html">TernaryTrie</a>
+  
+    <li><a href="./TernaryTrie/TNode.html">TernaryTrie::TNode</a>
+  
+    <li><a href="./ASCIICodes.html">ASCIICodes</a>
+  
+    <li><a href="./Acceptor.html">Acceptor</a>
+  
+    <li><a href="./Account.html">Account</a>
+  
+    <li><a href="./BoolExpParser.html">BoolExpParser</a>
+  
+    <li><a href="./CacheEntry.html">CacheEntry</a>
+  
+    <li><a href="./CacheManager.html">CacheManager</a>
+  
+    <li><a href="./CacheStats.html">CacheStats</a>
+  
+    <li><a href="./Character.html">Character</a>
+  
+    <li><a href="./Client.html">Client</a>
+  
+    <li><a href="./Cmd.html">Cmd</a>
+  
+    <li><a href="./ColorFilter.html">ColorFilter</a>
+  
+    <li><a href="./Command.html">Command</a>
+  
+    <li><a href="./Configuration.html">Configuration</a>
+  
+    <li><a href="./Connection.html">Connection</a>
+  
+    <li><a href="./Connector.html">Connector</a>
+  
+    <li><a href="./ConsoleClient.html">ConsoleClient</a>
+  
+    <li><a href="./CursesClient.html">CursesClient</a>
+  
+    <li><a href="./DbmStore.html">DbmStore</a>
+  
+    <li><a href="./DebugFilter.html">DebugFilter</a>
+  
+    <li><a href="./Dumper.html">Dumper</a>
+  
+    <li><a href="./Engine.html">Engine</a>
+  
+    <li><a href="./Event.html">Event</a>
+  
+    <li><a href="./EventManager.html">EventManager</a>
+  
+    <li><a href="./Exit.html">Exit</a>
+  
+    <li><a href="./Filter.html">Filter</a>
+  
+    <li><a href="./GameObject.html">GameObject</a>
+  
+    <li><a href="./GdbmStore.html">GdbmStore</a>
+  
+    <li><a href="./LineIO.html">LineIO</a>
+  
+    <li><a href="./Loader.html">Loader</a>
+  
+    <li><a href="./Log.html">Log</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Obj.html">Obj</a>
+  
+    <li><a href="./ObjCmd.html">ObjCmd</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./PacketIO.html">PacketIO</a>
+  
+    <li><a href="./ProtocolStack.html">ProtocolStack</a>
+  
+    <li><a href="./Publisher.html">Publisher</a>
+  
+    <li><a href="./Reactor.html">Reactor</a>
+  
+    <li><a href="./Room.html">Room</a>
+  
+    <li><a href="./Root.html">Root</a>
+  
+    <li><a href="./Script.html">Script</a>
+  
+    <li><a href="./SdbmStore.html">SdbmStore</a>
+  
+    <li><a href="./Session.html">Session</a>
+  
+    <li><a href="./SockIO.html">SockIO</a>
+  
+    <li><a href="./Sqlite3Store.html">Sqlite3Store</a>
+  
+    <li><a href="./SqliteStore.html">SqliteStore</a>
+  
+    <li><a href="./Store.html">Store</a>
+  
+    <li><a href="./String.html">String</a>
+  
+    <li><a href="./TelnetCodes.html">TelnetCodes</a>
+  
+    <li><a href="./TelnetFilter.html">TelnetFilter</a>
+  
+    <li><a href="./TerminalFilter.html">TerminalFilter</a>
+  
+    <li><a href="./Timer.html">Timer</a>
+  
+    <li><a href="./Utility.html">Utility</a>
+  
+    <li><a href="./VT100Codes.html">VT100Codes</a>
+  
+    <li><a href="./World.html">World</a>
+  
+    <li><a href="./XmlStore.html">XmlStore</a>
+  
+    <li><a href="./YamlStore.html">YamlStore</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class World</h1>
+
+  <div id="description" class="description">
+    
+<p>The <a href="World.html">World</a> class is the mother of all worlds.</p>
+
+<p>It contains world state information, the world timer, utility functions,
+and delegates to the <a href="Engine.html">Engine</a>.</p>
+<dl class="rdoc-list label-list"><dt><code>cmds</code>
+<dd>
+<p>is a handle to the character commands table.</p>
+</dd><dt><code>ocmds</code>
+<dd>
+<p>is a handle to the object commands table.</p>
+</dd><dt><code>timer_list</code>
+<dd>
+<p>is a list of all installed timer objects (persistent)</p>
+</dd><dt><code>all_characters</code>
+<dd>
+<p>is a list of all characters (persistent)</p>
+</dd><dt><code>timer_list</code>
+<dd>
+<p>is a list of all connected characters</p>
+</dd></dl>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-cmds" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">cmds</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-connected_characters" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">connected_characters</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-ocmds" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">ocmds</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create the <a href="World.html">World</a>.  This loads or creates the
+database depending on whether it finds it.</p>
+<dl class="rdoc-list label-list"><dt><code>return</code>
+<dd>
+<p>A handle to the <a href="World.html">World</a> object.</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/core/world.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">timer_list</span> = []
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_characters</span> = []
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_accounts</span> = []
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">admins</span> = []
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">builders</span> = []
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">msgs</span> = {}
+  <span class="ruby-ivar">@connected_characters</span> = []
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_admin" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_admin</span><span
+            class="method-args">(oid)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Make the character an admin</p>
+<dl class="rdoc-list label-list"><dt><code>oid</code>
+<dd>
+<p>character object id</p>
+</dd><dt><code>return</code>
+<dd>
+<p>undefined</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="add_admin-source">
+            <pre><span class="ruby-comment"># File lib/core/world.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_admin</span> <span class="ruby-identifier">oid</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">admins</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">oid</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Character</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">admin?</span>(<span class="ruby-identifier">oid</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_admin-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_admin-method -->
+
+    
+      <div id="method-i-add_builder" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_builder</span><span
+            class="method-args">(oid)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Make the character a builder</p>
+<dl class="rdoc-list label-list"><dt><code>oid</code>
+<dd>
+<p>character object id</p>
+</dd><dt><code>return</code>
+<dd>
+<p>undefined</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="add_builder-source">
+            <pre><span class="ruby-comment"># File lib/core/world.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_builder</span> <span class="ruby-identifier">oid</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">builders</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">oid</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Character</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">builder?</span>(<span class="ruby-identifier">oid</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_builder-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_builder-method -->
+
+    
+      <div id="method-i-is_admin-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_admin?</span><span
+            class="method-args">(oid)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Is character an admin?</p>
+<dl class="rdoc-list label-list"><dt><code>oid</code>
+<dd>
+<p>character object id</p>
+</dd><dt><code>return</code>
+<dd>
+<p>true or false</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="is_admin-3F-source">
+            <pre><span class="ruby-comment"># File lib/core/world.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_admin?</span> <span class="ruby-identifier">oid</span>
+  <span class="ruby-identifier">admins</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">oid</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is_admin-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_admin-3F-method -->
+
+    
+      <div id="method-i-is_builder-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_builder?</span><span
+            class="method-args">(oid)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Is character a builder?</p>
+<dl class="rdoc-list label-list"><dt><code>oid</code>
+<dd>
+<p>character object id</p>
+</dd><dt><code>return</code>
+<dd>
+<p>true or false</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="is_builder-3F-source">
+            <pre><span class="ruby-comment"># File lib/core/world.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_builder?</span> <span class="ruby-identifier">oid</span>
+  <span class="ruby-identifier">builders</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">oid</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is_builder-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_builder-3F-method -->
+
+    
+      <div id="method-i-is_owner-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_owner?</span><span
+            class="method-args">(pid, oid)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Does character own the object?</p>
+<dl class="rdoc-list label-list"><dt><code>pid</code>
+<dd>
+<p>character object id</p>
+</dd><dt><code>oid</code>
+<dd>
+<p>object id</p>
+</dd><dt><code>return</code>
+<dd>
+<p>true or false</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="is_owner-3F-source">
+            <pre><span class="ruby-comment"># File lib/core/world.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_owner?</span>(<span class="ruby-identifier">pid</span>, <span class="ruby-identifier">oid</span>)
+  <span class="ruby-identifier">oid</span>.<span class="ruby-identifier">owner</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">get_object</span>(<span class="ruby-identifier">pid</span>).<span class="ruby-identifier">owner</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is_owner-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_owner-3F-method -->
+
+    
+      <div id="method-i-memstats" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">memstats</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>memstats scans all objects in memory and produces a report</p>
+<dl class="rdoc-list label-list"><dt><code>return</code>
+<dd>
+<p>a string</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="memstats-source">
+            <pre><span class="ruby-comment"># File lib/core/world.rb, line 157</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">memstats</span>
+    <span class="ruby-comment"># initialize all counters</span>
+    <span class="ruby-identifier">rooms</span> = <span class="ruby-identifier">objs</span> = <span class="ruby-identifier">chars</span> = <span class="ruby-identifier">accounts</span> = <span class="ruby-identifier">scripts</span> = <span class="ruby-identifier">strcount</span> = <span class="ruby-identifier">strsize</span> = <span class="ruby-identifier">ocount</span> = <span class="ruby-value">0</span>
+
+    <span class="ruby-comment"># scan the ObjectSpace counting things</span>
+    <span class="ruby-constant">ObjectSpace</span>.<span class="ruby-identifier">each_object</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">x</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span>
+        <span class="ruby-identifier">strcount</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-identifier">strsize</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">size</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Character</span>
+        <span class="ruby-identifier">chars</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Account</span>
+        <span class="ruby-identifier">accounts</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Room</span>
+        <span class="ruby-identifier">rooms</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">GameObject</span>
+        <span class="ruby-identifier">objs</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Script</span>
+        <span class="ruby-identifier">scripts</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">ocount</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># our report  :</span>
+    <span class="ruby-comment"># :NOTE: sprintf would be better</span>
+    <span class="ruby-identifier">memstats</span>=<span class="ruby-string">&quot;[COLOR Cyan]
+----* Memory Statistics *----
+  Rooms      - #{rooms}
+  Objects    - #{objs}
+  Scripts    - #{scripts}
+  Accounts   - #{accounts}
+  Characters - #{chars}
+-----------------------------
+  Strings - #{strcount}
+     size - #{strsize} bytes
+  Other   - #{ocount}
+-----------------------------
+  Total Objects - #{rooms+objs+chars+accounts+scripts+strcount+ocount}
+----*                   *----
+[/COLOR]
+&quot;</span>
+  <span class="ruby-keyword">end</span></pre>
+          </div><!-- memstats-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- memstats-method -->
+
+    
+      <div id="method-i-rem_admin" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rem_admin</span><span
+            class="method-args">(oid)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Remove admin priviledges from character</p>
+<dl class="rdoc-list label-list"><dt><code>oid</code>
+<dd>
+<p>character object id</p>
+</dd><dt><code>return</code>
+<dd>
+<p>undefined</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="rem_admin-source">
+            <pre><span class="ruby-comment"># File lib/core/world.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rem_admin</span> <span class="ruby-identifier">oid</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">admins</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">oid</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rem_admin-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rem_admin-method -->
+
+    
+      <div id="method-i-rem_builder" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rem_builder</span><span
+            class="method-args">(oid)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Remove admin priviledges from character</p>
+<dl class="rdoc-list label-list"><dt><code>oid</code>
+<dd>
+<p>character object id</p>
+</dd><dt><code>return</code>
+<dd>
+<p>undefined</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="rem_builder-source">
+            <pre><span class="ruby-comment"># File lib/core/world.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rem_builder</span> <span class="ruby-identifier">oid</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">builders</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">oid</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rem_builder-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rem_builder-method -->
+
+    
+      <div id="method-i-set_timer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_timer</span><span
+            class="method-args">(id, name, time)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set/add a timer for an object</p>
+<dl class="rdoc-list label-list"><dt><code>id</code>
+<dd>
+<p>The id of the object that wants to get a timer event</p>
+</dd><dt><code>name</code>
+<dd>
+<p>The symbolic name of the timer event</p>
+</dd><dt><code>time</code>
+<dd>
+<p>The interval time in seconds of the timer event</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="set_timer-source">
+            <pre><span class="ruby-comment"># File lib/core/world.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_timer</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">time</span>)
+  <span class="ruby-ivar">@timer_list_mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">timer_list</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Timer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">time</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_timer-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_timer-method -->
+
+    
+      <div id="method-i-shutdown" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">shutdown</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="shutdown-source">
+            <pre><span class="ruby-comment"># File lib/core/world.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">shutdown</span>
+  <span class="ruby-identifier">connected_characters</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">pid</span><span class="ruby-operator">|</span> <span class="ruby-identifier">get_object</span>(<span class="ruby-identifier">pid</span>).<span class="ruby-identifier">account</span>.<span class="ruby-identifier">disconnect</span>(<span class="ruby-string">&quot;Shutdown.&quot;</span>)}
+  <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">kill</span>(<span class="ruby-ivar">@timer</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- shutdown-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- shutdown-method -->
+
+    
+      <div id="method-i-startup" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">startup</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="startup-source">
+            <pre><span class="ruby-comment"># File lib/core/world.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">startup</span>
+  <span class="ruby-ivar">@connected_characters</span> = []
+  <span class="ruby-ivar">@cmds</span>, <span class="ruby-ivar">@ocmds</span> = <span class="ruby-constant">Command</span>.<span class="ruby-identifier">load</span>
+  <span class="ruby-identifier">log</span>.<span class="ruby-identifier">info</span> <span class="ruby-string">&quot;Starting Timer...&quot;</span>
+  <span class="ruby-ivar">@timer_list_mutex</span> = <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@timer</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">while</span> <span class="ruby-keyword">true</span>
+        <span class="ruby-identifier">sleep</span> <span class="ruby-value">1.0</span>
+        <span class="ruby-ivar">@timer_list_mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+          <span class="ruby-identifier">timer_list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ti</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">ti</span>.<span class="ruby-identifier">fire?</span>
+              <span class="ruby-identifier">add_event</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">ti</span>.<span class="ruby-identifier">id</span>, <span class="ruby-value">:timer</span>, <span class="ruby-identifier">ti</span>.<span class="ruby-identifier">name</span>)
+              <span class="ruby-identifier">ti</span>.<span class="ruby-identifier">reset</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span>
+      <span class="ruby-identifier">log</span>.<span class="ruby-identifier">fatal</span> <span class="ruby-string">&quot;Timer thread blew up&quot;</span>
+      <span class="ruby-identifier">log</span>.<span class="ruby-identifier">fatal</span> <span class="ruby-identifier">$!</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">log</span>.<span class="ruby-identifier">info</span> <span class="ruby-string">&quot;World initialized.&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- startup-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- startup-method -->
+
+    
+      <div id="method-i-unset_timer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unset_timer</span><span
+            class="method-args">(id, name=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Unset/remove a timer for an object</p>
+<dl class="rdoc-list label-list"><dt><code>id</code>
+<dd>
+<p>The id of the object to remove a timer event</p>
+</dd><dt><code>name</code>
+<dd>
+<p>The symbolic name of the timer event to remove (or nil for all events)</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="unset_timer-source">
+            <pre><span class="ruby-comment"># File lib/core/world.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unset_timer</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">name</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@timer_list_mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">timer_list</span>.<span class="ruby-identifier">delete_if</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">ti</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ti</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">id</span> }
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">timer_list</span>.<span class="ruby-identifier">delete_if</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">ti</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ti</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">id</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ti</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span> }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unset_timer-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unset_timer-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

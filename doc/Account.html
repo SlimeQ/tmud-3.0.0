@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Account - TeensyMUD 3.0.0 Mud Server</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/core/account.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Root.html">Root</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Publisher.html">Publisher</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-append_echo">#append_echo</a>
+    
+    <li><a href="#method-i-character_menu">#character_menu</a>
+    
+    <li><a href="#method-i-disconnect">#disconnect</a>
+    
+    <li><a href="#method-i-login_menu">#login_menu</a>
+    
+    <li><a href="#method-i-parse_menu">#parse_menu</a>
+    
+    <li><a href="#method-i-parse_messages">#parse_messages</a>
+    
+    <li><a href="#method-i-prompt">#prompt</a>
+    
+    <li><a href="#method-i-sendmsg">#sendmsg</a>
+    
+    <li><a href="#method-i-status_rept">#status_rept</a>
+    
+    <li><a href="#method-i-toggle_color">#toggle_color</a>
+    
+    <li><a href="#method-i-update">#update</a>
+    
+    <li><a href="#method-i-vtsupport-3F">#vtsupport?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+    <li class="file"><a href="./TML.html">TML</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Farts.html">Farts</a>
+  
+    <li><a href="./Farts/AttributeSyntaxNode.html">Farts::AttributeSyntaxNode</a>
+  
+    <li><a href="./Farts/CallSyntaxNode.html">Farts::CallSyntaxNode</a>
+  
+    <li><a href="./Farts/CommandSyntaxNode.html">Farts::CommandSyntaxNode</a>
+  
+    <li><a href="./Farts/CommentSyntaxNode.html">Farts::CommentSyntaxNode</a>
+  
+    <li><a href="./Farts/EndSyntaxNode.html">Farts::EndSyntaxNode</a>
+  
+    <li><a href="./Farts/IfSyntaxNode.html">Farts::IfSyntaxNode</a>
+  
+    <li><a href="./Farts/Interpreter.html">Farts::Interpreter</a>
+  
+    <li><a href="./Farts/Lexer.html">Farts::Lexer</a>
+  
+    <li><a href="./Farts/Lib.html">Farts::Lib</a>
+  
+    <li><a href="./Farts/LiteralSyntaxNode.html">Farts::LiteralSyntaxNode</a>
+  
+    <li><a href="./Farts/LocalVarSyntaxNode.html">Farts::LocalVarSyntaxNode</a>
+  
+    <li><a href="./Farts/Parser.html">Farts::Parser</a>
+  
+    <li><a href="./Farts/ProgramSyntaxNode.html">Farts::ProgramSyntaxNode</a>
+  
+    <li><a href="./Farts/SyntaxNode.html">Farts::SyntaxNode</a>
+  
+    <li><a href="./SQLite.html">SQLite</a>
+  
+    <li><a href="./SQLite3.html">SQLite3</a>
+  
+    <li><a href="./SQLite3/Database.html">SQLite3::Database</a>
+  
+    <li><a href="./SQLite/Database.html">SQLite::Database</a>
+  
+    <li><a href="./TernaryTrie.html">TernaryTrie</a>
+  
+    <li><a href="./TernaryTrie/TNode.html">TernaryTrie::TNode</a>
+  
+    <li><a href="./ASCIICodes.html">ASCIICodes</a>
+  
+    <li><a href="./Acceptor.html">Acceptor</a>
+  
+    <li><a href="./Account.html">Account</a>
+  
+    <li><a href="./BoolExpParser.html">BoolExpParser</a>
+  
+    <li><a href="./CacheEntry.html">CacheEntry</a>
+  
+    <li><a href="./CacheManager.html">CacheManager</a>
+  
+    <li><a href="./CacheStats.html">CacheStats</a>
+  
+    <li><a href="./Character.html">Character</a>
+  
+    <li><a href="./Client.html">Client</a>
+  
+    <li><a href="./Cmd.html">Cmd</a>
+  
+    <li><a href="./ColorFilter.html">ColorFilter</a>
+  
+    <li><a href="./Command.html">Command</a>
+  
+    <li><a href="./Configuration.html">Configuration</a>
+  
+    <li><a href="./Connection.html">Connection</a>
+  
+    <li><a href="./Connector.html">Connector</a>
+  
+    <li><a href="./ConsoleClient.html">ConsoleClient</a>
+  
+    <li><a href="./CursesClient.html">CursesClient</a>
+  
+    <li><a href="./DbmStore.html">DbmStore</a>
+  
+    <li><a href="./DebugFilter.html">DebugFilter</a>
+  
+    <li><a href="./Dumper.html">Dumper</a>
+  
+    <li><a href="./Engine.html">Engine</a>
+  
+    <li><a href="./Event.html">Event</a>
+  
+    <li><a href="./EventManager.html">EventManager</a>
+  
+    <li><a href="./Exit.html">Exit</a>
+  
+    <li><a href="./Filter.html">Filter</a>
+  
+    <li><a href="./GameObject.html">GameObject</a>
+  
+    <li><a href="./GdbmStore.html">GdbmStore</a>
+  
+    <li><a href="./LineIO.html">LineIO</a>
+  
+    <li><a href="./Loader.html">Loader</a>
+  
+    <li><a href="./Log.html">Log</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Obj.html">Obj</a>
+  
+    <li><a href="./ObjCmd.html">ObjCmd</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./PacketIO.html">PacketIO</a>
+  
+    <li><a href="./ProtocolStack.html">ProtocolStack</a>
+  
+    <li><a href="./Publisher.html">Publisher</a>
+  
+    <li><a href="./Reactor.html">Reactor</a>
+  
+    <li><a href="./Room.html">Room</a>
+  
+    <li><a href="./Root.html">Root</a>
+  
+    <li><a href="./Script.html">Script</a>
+  
+    <li><a href="./SdbmStore.html">SdbmStore</a>
+  
+    <li><a href="./Session.html">Session</a>
+  
+    <li><a href="./SockIO.html">SockIO</a>
+  
+    <li><a href="./Sqlite3Store.html">Sqlite3Store</a>
+  
+    <li><a href="./SqliteStore.html">SqliteStore</a>
+  
+    <li><a href="./Store.html">Store</a>
+  
+    <li><a href="./String.html">String</a>
+  
+    <li><a href="./TelnetCodes.html">TelnetCodes</a>
+  
+    <li><a href="./TelnetFilter.html">TelnetFilter</a>
+  
+    <li><a href="./TerminalFilter.html">TerminalFilter</a>
+  
+    <li><a href="./Timer.html">Timer</a>
+  
+    <li><a href="./Utility.html">Utility</a>
+  
+    <li><a href="./VT100Codes.html">VT100Codes</a>
+  
+    <li><a href="./World.html">World</a>
+  
+    <li><a href="./XmlStore.html">XmlStore</a>
+  
+    <li><a href="./YamlStore.html">YamlStore</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Account</h1>
+
+  <div id="description" class="description">
+    
+<p>The <a href="Account.html">Account</a> class handles connection login and
+passes them to character.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-character" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">character</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-conn" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">conn</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-echo" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">echo</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-mode" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">mode</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-terminal" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">terminal</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-termsize" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">termsize</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(conn)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create an <a href="Account.html">Account</a> connection.  This is a
+temporary object that handles login for character and gets them connected.</p>
+<dl class="rdoc-list label-list"><dt><code>conn</code>
+<dd>
+<p>The session associated with this <a href="Account.html">Account</a>
+connection.</p>
+</dd><dt><code>return</code>
+<dd>
+<p>A handle to the <a href="Account.html">Account</a> object.</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/core/account.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">conn</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-string">&quot;&quot;</span>,<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">passwd</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">color</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">characters</span> = []
+  <span class="ruby-ivar">@conn</span> = <span class="ruby-identifier">conn</span>                <span class="ruby-comment"># Reference to network session (connection)</span>
+  <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:initialize</span>
+  <span class="ruby-ivar">@echo</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@termsize</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@terminal</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@checked</span> = <span class="ruby-value">3</span>                <span class="ruby-comment"># Login retry counter - on 0 disconnect</span>
+  <span class="ruby-ivar">@account</span> = <span class="ruby-keyword">nil</span>              <span class="ruby-comment"># used only during sign-in process</span>
+  <span class="ruby-ivar">@character</span> = <span class="ruby-keyword">nil</span>            <span class="ruby-comment"># reference to the currently played Character.</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-append_echo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">append_echo</span><span
+            class="method-args">(msg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>If echo hasn’t been negotiated, we want to leave the cursor after the
+message prompt, so we prepend linefeeds in front of messages. This is
+hackish.</p>
+          
+
+          
+          <div class="method-source-code" id="append_echo-source">
+            <pre><span class="ruby-comment"># File lib/core/account.rb, line 327</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">append_echo</span>(<span class="ruby-identifier">msg</span>)
+  <span class="ruby-ivar">@echo</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">msg</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;\n&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- append_echo-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- append_echo-method -->
+
+    
+      <div id="method-i-character_menu" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">character_menu</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="character_menu-source">
+            <pre><span class="ruby-comment"># File lib/core/account.rb, line 379</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">character_menu</span>
+  <span class="ruby-identifier">str</span> = <span class="ruby-string">'[color Yellow]'</span>
+  <span class="ruby-identifier">characters</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{i}) #{get_object(characters[i]).name}\n&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;Pick a character&gt;[/color] &quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- character_menu-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- character_menu-method -->
+
+    
+      <div id="method-i-disconnect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">disconnect</span><span
+            class="method-args">(msg=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Disconnects this account</p>
+          
+
+          
+          <div class="method-source-code" id="disconnect-source">
+            <pre><span class="ruby-comment"># File lib/core/account.rb, line 371</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">disconnect</span>(<span class="ruby-identifier">msg</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;[home 1,1][scrreset][clear]&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">vtsupport?</span>
+  <span class="ruby-identifier">publish</span>(<span class="ruby-identifier">msg</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\n&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">msg</span>
+  <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;Bye!\n&quot;</span>)
+  <span class="ruby-identifier">publish</span>(<span class="ruby-value">:quit</span>)
+  <span class="ruby-identifier">unsubscribe_all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- disconnect-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- disconnect-method -->
+
+    
+      <div id="method-i-login_menu" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">login_menu</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="login_menu-source">
+            <pre><span class="ruby-comment"># File lib/core/account.rb, line 387</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">login_menu</span>
+  <span class="ruby-string">&quot;[color Yellow]1) Create a character\n2) Play\nQ) Quit\n&gt;[/color] &quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- login_menu-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- login_menu-method -->
+
+    
+      <div id="method-i-parse_menu" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_menu</span><span
+            class="method-args">(msg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handles message while in the login menu - called by parse_messages. This
+was refactored out of <a
+href="Account.html#method-i-parse_messages">#parse_messages</a> for length
+reasons.</p>
+<dl class="rdoc-list label-list"><dt><code>msg</code>
+<dd>
+<p>The message string</p>
+</dd></dl>
+
+<p>@mode tracks the state changes,  This routine is entered by any @modes
+staring with :menu.</p>
+
+<p>The following state transition diagram illustrates the possible
+transitions.</p>
+
+<p>:menu      -&gt; :menucr       Create a character</p>
+
+<pre>-&gt; :menupl       Play a character</pre>
+
+<p>:menucr    -&gt; :playing      Get character name, create character and
+play</p>
+          
+
+          
+          <div class="method-source-code" id="parse_menu-source">
+            <pre><span class="ruby-comment"># File lib/core/account.rb, line 270</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_menu</span>(<span class="ruby-identifier">msg</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-ivar">@mode</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:menu</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">msg</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^1/</span>
+      <span class="ruby-identifier">sendmsg</span>(<span class="ruby-identifier">append_echo</span>(<span class="ruby-string">&quot;Enter character name&gt; &quot;</span>))
+      <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:menucr</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^2/</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">characters</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+        <span class="ruby-identifier">sendmsg</span>(<span class="ruby-identifier">append_echo</span>(<span class="ruby-identifier">login_menu</span>))
+        <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:menu</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">sendmsg</span>(<span class="ruby-identifier">append_echo</span>(<span class="ruby-identifier">character_menu</span>))
+        <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:menupl</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^Q/</span>
+      <span class="ruby-identifier">disconnect</span>
+    <span class="ruby-keyword">else</span>                        <span class="ruby-comment"># Any other key</span>
+      <span class="ruby-identifier">sendmsg</span>(<span class="ruby-identifier">append_echo</span>(<span class="ruby-identifier">login_menu</span>))
+      <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:menu</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:menucr</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">proper_name</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">sendmsg</span>(<span class="ruby-identifier">append_echo</span>(<span class="ruby-identifier">login_menu</span>))
+      <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:menu</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@character</span> = <span class="ruby-identifier">new_char</span>(<span class="ruby-identifier">msg</span>.<span class="ruby-identifier">proper_name</span>)
+      <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">set</span>(<span class="ruby-value">:color</span>, <span class="ruby-identifier">color</span>)
+      <span class="ruby-identifier">welcome</span>
+      <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:playing</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:menupl</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">msg</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r(\d+)/</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">characters</span>.<span class="ruby-identifier">size</span>
+        <span class="ruby-identifier">sendmsg</span>(<span class="ruby-identifier">append_echo</span>(<span class="ruby-identifier">character_menu</span>))
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-ivar">@character</span> = <span class="ruby-identifier">get_object</span>(<span class="ruby-identifier">characters</span>[<span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>])
+        <span class="ruby-comment"># make the character non-swappable so we dont lose references</span>
+        <span class="ruby-constant">Engine</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">db</span>.<span class="ruby-identifier">makenoswap</span>(<span class="ruby-ivar">@character</span>.<span class="ruby-identifier">id</span>)
+        <span class="ruby-identifier">world</span>.<span class="ruby-identifier">connected_characters</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@character</span>.<span class="ruby-identifier">id</span>
+        <span class="ruby-ivar">@character</span>.<span class="ruby-identifier">account</span> = <span class="ruby-keyword">self</span>
+        <span class="ruby-identifier">welcome</span>
+        <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:playing</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">sendmsg</span>(<span class="ruby-identifier">append_echo</span>(<span class="ruby-identifier">login_menu</span>))
+      <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:menu</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;Account#parse_menu unknown :mode - #{@mode.inspect}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse_menu-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse_menu-method -->
+
+    
+      <div id="method-i-parse_messages" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_messages</span><span
+            class="method-args">(msg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handles <a href="String.html">String</a> messages from <a
+href="Connection.html">Connection</a> - called by update. This was
+refactored out of <a href="Account.html#method-i-update">#update</a> for
+length reasons.</p>
+<dl class="rdoc-list label-list"><dt><code>msg</code>
+<dd>
+<p>The message string</p>
+</dd></dl>
+
+<p>@mode tracks the state changes,  The <a href="Account.html">Account</a> is
+created with the initial state of :initialize.  The following state
+transition diagram illustrates the possible transitions.</p>
+
+<p>:intialize -&gt; :name         Set when Account:update receives :initdone
+msg :name      -&gt; :password     Sets @login_name and finds @account</p>
+
+<pre>:playing      Creates a new character if Guest account</pre>
+
+<p>:password  -&gt; :newacct      Sets @login_passwd</p>
+
+<pre>-&gt; :menu         Good passwd, switches account, if account_system
+                 option on goes to menu
+-&gt; :playing      Good passwd, switches account, loads character
+-&gt; :name         Bad passwd
+-&gt; disconnect    Bad passwd, exceeds @check attempts
+                 (see Account#disconnect)</pre>
+
+<p>:newacct   -&gt; :menu           If account_system option on goes to menu</p>
+
+<pre>-&gt; :playing        Creates new character, adds account</pre>
+
+<p>:menu      -&gt; <a href="Account.html#method-i-parse_menu">#parse_menu</a>
+Redirect message (see <a
+href="Account.html#method-i-parse_menu">#parse_menu</a>) :playing   -&gt;
+@character    Redirect message (see <a
+href="Character.html#method-i-parse">Character#parse</a>)</p>
+          
+
+          
+          <div class="method-source-code" id="parse_messages-source">
+            <pre><span class="ruby-comment"># File lib/core/account.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_messages</span>(<span class="ruby-identifier">msg</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-ivar">@mode</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:initialize</span>
+    <span class="ruby-comment"># ignore everything until negotiation done</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:name</span>
+    <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;[clearline]&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">vtsupport?</span>
+    <span class="ruby-ivar">@login_name</span> = <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">proper_name</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">'guest_accounts'</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@login_name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%rGuest/</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span> = <span class="ruby-node">&quot;Guest#{id}&quot;</span>
+      <span class="ruby-ivar">@character</span> = <span class="ruby-identifier">new_char</span>
+      <span class="ruby-identifier">put_object</span>(<span class="ruby-keyword">self</span>)
+      <span class="ruby-identifier">world</span>.<span class="ruby-identifier">all_accounts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">id</span>
+      <span class="ruby-comment"># make the account non-swappable so we dont lose connection</span>
+      <span class="ruby-constant">Engine</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">db</span>.<span class="ruby-identifier">makenoswap</span>(<span class="ruby-identifier">id</span>)
+      <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">set</span>(<span class="ruby-value">:color</span>, <span class="ruby-identifier">color</span>)
+      <span class="ruby-identifier">welcome</span>
+      <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:playing</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@login_name</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">sendmsg</span>(<span class="ruby-identifier">append_echo</span>(<span class="ruby-string">&quot;login&gt; &quot;</span>))
+      <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:name</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">acctid</span> = <span class="ruby-identifier">world</span>.<span class="ruby-identifier">all_accounts</span>.<span class="ruby-identifier">find</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@login_name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">get_object</span>(<span class="ruby-identifier">a</span>).<span class="ruby-identifier">name</span>
+      }
+      <span class="ruby-ivar">@account</span> = <span class="ruby-identifier">get_object</span>(<span class="ruby-identifier">acctid</span>)
+      <span class="ruby-identifier">sendmsg</span>(<span class="ruby-identifier">append_echo</span>(<span class="ruby-string">&quot;password&gt; &quot;</span>))
+      <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">set</span>(<span class="ruby-value">:hide</span>, <span class="ruby-keyword">true</span>)
+      <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:password</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:password</span>
+    <span class="ruby-ivar">@login_passwd</span> = <span class="ruby-identifier">msg</span>
+    <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">set</span>(<span class="ruby-value">:hide</span>, <span class="ruby-keyword">false</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@account</span>.<span class="ruby-identifier">nil?</span>  <span class="ruby-comment"># new account</span>
+      <span class="ruby-identifier">sendmsg</span>(<span class="ruby-identifier">append_echo</span>(<span class="ruby-string">&quot;Create new user?\n'Y/y' to create, Hit enter to retry login&gt; &quot;</span>))
+      <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:newacct</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@login_passwd</span>.<span class="ruby-identifier">is_passwd?</span>(<span class="ruby-ivar">@account</span>.<span class="ruby-identifier">passwd</span>)  <span class="ruby-comment"># good login</span>
+        <span class="ruby-comment"># deregister all observers here and on connection</span>
+        <span class="ruby-identifier">unsubscribe_all</span>
+        <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">unsubscribe_all</span>
+        <span class="ruby-comment"># reregister all observers to @account</span>
+        <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">subscribe</span>(<span class="ruby-ivar">@account</span>.<span class="ruby-identifier">id</span>)
+        <span class="ruby-comment"># make the account non-swappable so we dont lose connection</span>
+        <span class="ruby-constant">Engine</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">db</span>.<span class="ruby-identifier">makenoswap</span>(<span class="ruby-ivar">@account</span>.<span class="ruby-identifier">id</span>)
+        <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">set</span>(<span class="ruby-value">:color</span>, <span class="ruby-ivar">@account</span>.<span class="ruby-identifier">color</span>)
+        <span class="ruby-identifier">switch_acct</span>(<span class="ruby-ivar">@account</span>)
+        <span class="ruby-comment"># Check if this account already logged in</span>
+        <span class="ruby-identifier">reconnect</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@account</span>.<span class="ruby-identifier">subscriber_count</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+          <span class="ruby-ivar">@account</span>.<span class="ruby-identifier">publish</span>(<span class="ruby-value">:reconnecting</span>)
+          <span class="ruby-ivar">@account</span>.<span class="ruby-identifier">unsubscribe_all</span>
+          <span class="ruby-identifier">reconnect</span> = <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@account</span>.<span class="ruby-identifier">subscribe</span>(<span class="ruby-ivar">@conn</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">'account_system'</span>]
+          <span class="ruby-ivar">@account</span>.<span class="ruby-identifier">sendmsg</span>(<span class="ruby-identifier">append_echo</span>(<span class="ruby-identifier">login_menu</span>))
+          <span class="ruby-ivar">@account</span>.<span class="ruby-identifier">mode</span> = <span class="ruby-value">:menu</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-ivar">@character</span> = <span class="ruby-identifier">get_object</span>(<span class="ruby-ivar">@account</span>.<span class="ruby-identifier">characters</span>.<span class="ruby-identifier">first</span>)
+          <span class="ruby-comment"># make the character non-swappable so we dont lose references</span>
+          <span class="ruby-constant">Engine</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">db</span>.<span class="ruby-identifier">makenoswap</span>(<span class="ruby-ivar">@character</span>.<span class="ruby-identifier">id</span>)
+          <span class="ruby-identifier">world</span>.<span class="ruby-identifier">connected_characters</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@character</span>.<span class="ruby-identifier">id</span>
+          <span class="ruby-ivar">@character</span>.<span class="ruby-identifier">account</span> = <span class="ruby-ivar">@account</span>
+          <span class="ruby-ivar">@account</span>.<span class="ruby-identifier">character</span> = <span class="ruby-ivar">@character</span>
+          <span class="ruby-identifier">welcome</span>(<span class="ruby-identifier">reconnect</span>)
+          <span class="ruby-ivar">@account</span>.<span class="ruby-identifier">mode</span> = <span class="ruby-value">:playing</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>  <span class="ruby-comment"># bad login</span>
+        <span class="ruby-ivar">@checked</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+        <span class="ruby-identifier">sendmsg</span>(<span class="ruby-identifier">append_echo</span>(<span class="ruby-string">&quot;Sorry wrong password.&quot;</span>))
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@checked</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1</span>
+          <span class="ruby-identifier">disconnect</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:name</span>
+          <span class="ruby-identifier">sendmsg</span>(<span class="ruby-identifier">append_echo</span>(<span class="ruby-string">&quot;login&gt; &quot;</span>))
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:newacct</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">msg</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^y/</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span> = <span class="ruby-ivar">@login_name</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">passwd</span> = <span class="ruby-ivar">@login_passwd</span>.<span class="ruby-identifier">encrypt</span>
+      <span class="ruby-identifier">put_object</span>(<span class="ruby-keyword">self</span>)
+      <span class="ruby-comment"># make the account non-swappable so we dont lose connection</span>
+      <span class="ruby-constant">Engine</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">db</span>.<span class="ruby-identifier">makenoswap</span>(<span class="ruby-identifier">id</span>)
+      <span class="ruby-identifier">world</span>.<span class="ruby-identifier">all_accounts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">id</span>
+      <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">set</span>(<span class="ruby-value">:color</span>, <span class="ruby-identifier">color</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">'account_system'</span>]
+        <span class="ruby-identifier">sendmsg</span>(<span class="ruby-identifier">append_echo</span>(<span class="ruby-identifier">login_menu</span>))
+        <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:menu</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-ivar">@character</span> = <span class="ruby-identifier">new_char</span>
+        <span class="ruby-identifier">welcome</span>
+        <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:playing</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:name</span>
+      <span class="ruby-identifier">sendmsg</span>(<span class="ruby-identifier">append_echo</span>(<span class="ruby-string">&quot;login&gt; &quot;</span>))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:menu</span>, <span class="ruby-value">:menucr</span>, <span class="ruby-value">:menupl</span>
+    <span class="ruby-identifier">parse_menu</span>(<span class="ruby-identifier">msg</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:playing</span>
+    <span class="ruby-ivar">@character</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">msg</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;Account#parse_messages unknown :mode - #{@mode.inspect}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse_messages-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse_messages-method -->
+
+    
+      <div id="method-i-prompt" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">prompt</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="prompt-source">
+            <pre><span class="ruby-comment"># File lib/core/account.rb, line 338</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">prompt</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">vtsupport?</span>
+<span class="ruby-comment">      publish(&quot;[cursave][home #{@termsize[1]-2},1]&quot; +
+        &quot;[color Yellow on Red]#{&quot; &quot;*@termsize[0]}[/color]&quot; +
+        &quot;[home #{@termsize[1]-1},1][clearline][color Magenta](#{name})[#{@mode}][/color]&quot; +
+        &quot;[currest][clearline]&gt; &quot;)
+</span>      <span class="ruby-identifier">publish</span>(<span class="ruby-node">&quot;[home #{@termsize[1]-2},1]&quot;</span> <span class="ruby-operator">+</span>
+        <span class="ruby-node">&quot;[color Yellow on Red]#{&quot; &quot;*@termsize[0]}[/color]&quot;</span> <span class="ruby-operator">+</span>
+        <span class="ruby-node">&quot;[home #{@termsize[1]-1},1][clearline][color Magenta](#{name})[#{@mode}][/color]&quot;</span> <span class="ruby-operator">+</span>
+        <span class="ruby-node">&quot;[home #{@termsize[1]},1][clearline]&gt; &quot;</span>)
+    <span class="ruby-keyword">else</span>
+<span class="ruby-comment">#      publish(&quot;&gt; &quot;)</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span></pre>
+          </div><!-- prompt-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- prompt-method -->
+
+    
+      <div id="method-i-sendmsg" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sendmsg</span><span
+            class="method-args">(msg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sendmsg-source">
+            <pre><span class="ruby-comment"># File lib/core/account.rb, line 331</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sendmsg</span>(<span class="ruby-identifier">msg</span>)
+  <span class="ruby-identifier">publish</span>(<span class="ruby-node">&quot;[cursave][home #{@termsize[1]-3},1]&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">vtsupport?</span>
+  <span class="ruby-identifier">publish</span>(<span class="ruby-identifier">msg</span>)
+  <span class="ruby-identifier">publish</span>(<span class="ruby-string">&quot;[currest]&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">vtsupport?</span>
+  <span class="ruby-identifier">prompt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sendmsg-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sendmsg-method -->
+
+    
+      <div id="method-i-status_rept" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">status_rept</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="status_rept-source">
+            <pre><span class="ruby-comment"># File lib/core/account.rb, line 355</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">status_rept</span>
+  <span class="ruby-identifier">str</span> = <span class="ruby-node">&quot;Terminal: #{@terminal}\n&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;Terminal size: #{@termsize[0]} X #{@termsize[1]}\n&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;Colors toggled #{@color ? '[COLOR Magenta]ON[/COLOR]' : 'OFF' }\n&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;Echo is #{@echo ? 'ON' : 'OFF' }\n&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;ZMP is #{@conn.query(:zmp) ? 'ON' : 'OFF' }\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- status_rept-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- status_rept-method -->
+
+    
+      <div id="method-i-toggle_color" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">toggle_color</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="toggle_color-source">
+            <pre><span class="ruby-comment"># File lib/core/account.rb, line 363</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">toggle_color</span>
+  <span class="ruby-identifier">color</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">color</span> = <span class="ruby-keyword">false</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">color</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">set</span>(<span class="ruby-value">:color</span>,<span class="ruby-identifier">color</span>)
+  <span class="ruby-node">&quot;Colors toggled #{color ? '[COLOR Magenta]ON[/COLOR]' : 'OFF' }\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- toggle_color-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- toggle_color-method -->
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">(msg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Receives messages from a <a href="Connection.html">Connection</a> being
+observed and handles login state.</p>
+<dl class="rdoc-list label-list"><dt><code>msg</code>
+<dd>
+<p>The message string</p>
+</dd></dl>
+
+<p>This supports the following:</p>
+<dl class="rdoc-list label-list"><dt>:disconnected
+<dd><ul><li>
+<p>This symbol from the server informs us that the</p>
+</li></ul>
+
+<p><a href="Connection.html">Connection</a> has disconnected.</p>
+</dd><dt>:initdone
+<dd><ul><li>
+<p>This symbol from the server indicates that the <a
+href="Connection.html">Connection</a> is done setting up and done
+negotiating an initial state. It triggers us to start sending output and
+parsing input.</p>
+</li></ul>
+</dd><dt>:termsize
+<dd><ul><li>
+<p>This is sent everytime the terminal size changes (NAWS)</p>
+</li></ul>
+</dd><dt><a href="String.html">String</a>
+<dd><ul><li>
+<p>A <a href="String.html">String</a> is assumed to be input from the <a
+href="Session.html">Session</a> and we send it to parse_messages.</p>
+</li></ul>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File lib/core/account.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>(<span class="ruby-identifier">msg</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">msg</span>
+  <span class="ruby-comment"># Handle disconnection from server</span>
+  <span class="ruby-comment"># Note that publishing a :quit event (see #disconnect) will return a</span>
+  <span class="ruby-comment">#  :disconnected event when server has closed the connection.</span>
+  <span class="ruby-comment"># Guest accounts and characters are deleted here.</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:disconnected</span>
+    <span class="ruby-ivar">@conn</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">unsubscribe_all</span>
+    <span class="ruby-constant">Engine</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">db</span>.<span class="ruby-identifier">makeswap</span>(<span class="ruby-identifier">id</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@character</span>
+      <span class="ruby-identifier">world</span>.<span class="ruby-identifier">connected_characters</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-ivar">@character</span>.<span class="ruby-identifier">id</span>)
+      <span class="ruby-identifier">world</span>.<span class="ruby-identifier">connected_characters</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pid</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">add_event</span>(<span class="ruby-ivar">@character</span>.<span class="ruby-identifier">id</span>,<span class="ruby-identifier">pid</span>,<span class="ruby-value">:show</span>,<span class="ruby-node">&quot;#{name} has disconnected.&quot;</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-constant">Engine</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">db</span>.<span class="ruby-identifier">makeswap</span>(<span class="ruby-ivar">@character</span>.<span class="ruby-identifier">id</span>)
+      <span class="ruby-ivar">@character</span>.<span class="ruby-identifier">account</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@character</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%rGuest/</span>
+        <span class="ruby-identifier">world</span>.<span class="ruby-identifier">all_characters</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-ivar">@character</span>.<span class="ruby-identifier">id</span>)
+        <span class="ruby-identifier">delete_object</span>(<span class="ruby-ivar">@character</span>.<span class="ruby-identifier">id</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-ivar">@character</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%rGuest/</span>
+      <span class="ruby-identifier">world</span>.<span class="ruby-identifier">all_accounts</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">id</span>)
+      <span class="ruby-identifier">delete_object</span>(<span class="ruby-identifier">id</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># Issued when a NAWS event occurs</span>
+  <span class="ruby-comment"># Currently this clears and resets the screen.  Ideally it should attempt</span>
+  <span class="ruby-comment"># to redraw it.</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:termsize</span>
+    <span class="ruby-ivar">@termsize</span> = <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">query</span>(<span class="ruby-value">:termsize</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">vtsupport?</span>
+      <span class="ruby-identifier">publish</span>(<span class="ruby-node">&quot;[home #{@termsize[1]},1][clearline][cursave]&quot;</span> <span class="ruby-operator">+</span>
+        <span class="ruby-node">&quot;[home 1,1][scrreset][clear][scrreg 1,#{@termsize[1]-3}][currest]&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># Negotiation with client done.  Start talking to it.</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:initdone</span>
+    <span class="ruby-ivar">@echo</span> = <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">query</span>(<span class="ruby-value">:echo</span>)
+    <span class="ruby-ivar">@termsize</span> = <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">query</span>(<span class="ruby-value">:termsize</span>)
+    <span class="ruby-ivar">@terminal</span> = <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">query</span>(<span class="ruby-value">:terminal</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">vtsupport?</span>
+      <span class="ruby-identifier">publish</span>(<span class="ruby-node">&quot;[home #{@termsize[1]},1][clearline][cursave]&quot;</span> <span class="ruby-operator">+</span>
+        <span class="ruby-node">&quot;[home 1,1][scrreset][clear][scrreg 1,#{@termsize[1]-3}][currest]&quot;</span>)
+      <span class="ruby-identifier">sendmsg</span>(<span class="ruby-constant">LOGO</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">sendmsg</span>(<span class="ruby-constant">BANNER</span>)
+    <span class="ruby-identifier">sendmsg</span>(<span class="ruby-identifier">append_echo</span>(<span class="ruby-string">&quot;login&gt; &quot;</span>))
+    <span class="ruby-ivar">@mode</span> = <span class="ruby-value">:name</span>
+  <span class="ruby-comment"># This is a message from our user</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span>
+    <span class="ruby-identifier">parse_messages</span>(<span class="ruby-identifier">msg</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;Account#update unknown message - #{msg.inspect}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span>
+  <span class="ruby-comment"># We squash and print out all exceptions here.  There is no reason to</span>
+  <span class="ruby-comment"># throw these back at the Connection.</span>
+  <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-identifier">$!</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update-method -->
+
+    
+      <div id="method-i-vtsupport-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">vtsupport?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="vtsupport-3F-source">
+            <pre><span class="ruby-comment"># File lib/core/account.rb, line 391</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">vtsupport?</span>
+  <span class="ruby-ivar">@terminal</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^vt|xterm/</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- vtsupport-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- vtsupport-3F-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

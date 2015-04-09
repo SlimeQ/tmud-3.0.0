@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Farts::LocalVarSyntaxNode - TeensyMUD 3.0.0 Mud Server</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/farts/farts_parser.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="SyntaxNode.html">Farts::SyntaxNode</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-execute">#execute</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../README.html">README</a>
+  
+    <li class="file"><a href="../TML.html">TML</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Farts.html">Farts</a>
+  
+    <li><a href="../Farts/AttributeSyntaxNode.html">Farts::AttributeSyntaxNode</a>
+  
+    <li><a href="../Farts/CallSyntaxNode.html">Farts::CallSyntaxNode</a>
+  
+    <li><a href="../Farts/CommandSyntaxNode.html">Farts::CommandSyntaxNode</a>
+  
+    <li><a href="../Farts/CommentSyntaxNode.html">Farts::CommentSyntaxNode</a>
+  
+    <li><a href="../Farts/EndSyntaxNode.html">Farts::EndSyntaxNode</a>
+  
+    <li><a href="../Farts/IfSyntaxNode.html">Farts::IfSyntaxNode</a>
+  
+    <li><a href="../Farts/Interpreter.html">Farts::Interpreter</a>
+  
+    <li><a href="../Farts/Lexer.html">Farts::Lexer</a>
+  
+    <li><a href="../Farts/Lib.html">Farts::Lib</a>
+  
+    <li><a href="../Farts/LiteralSyntaxNode.html">Farts::LiteralSyntaxNode</a>
+  
+    <li><a href="../Farts/LocalVarSyntaxNode.html">Farts::LocalVarSyntaxNode</a>
+  
+    <li><a href="../Farts/Parser.html">Farts::Parser</a>
+  
+    <li><a href="../Farts/ProgramSyntaxNode.html">Farts::ProgramSyntaxNode</a>
+  
+    <li><a href="../Farts/SyntaxNode.html">Farts::SyntaxNode</a>
+  
+    <li><a href="../SQLite.html">SQLite</a>
+  
+    <li><a href="../SQLite3.html">SQLite3</a>
+  
+    <li><a href="../SQLite3/Database.html">SQLite3::Database</a>
+  
+    <li><a href="../SQLite/Database.html">SQLite::Database</a>
+  
+    <li><a href="../TernaryTrie.html">TernaryTrie</a>
+  
+    <li><a href="../TernaryTrie/TNode.html">TernaryTrie::TNode</a>
+  
+    <li><a href="../ASCIICodes.html">ASCIICodes</a>
+  
+    <li><a href="../Acceptor.html">Acceptor</a>
+  
+    <li><a href="../Account.html">Account</a>
+  
+    <li><a href="../BoolExpParser.html">BoolExpParser</a>
+  
+    <li><a href="../CacheEntry.html">CacheEntry</a>
+  
+    <li><a href="../CacheManager.html">CacheManager</a>
+  
+    <li><a href="../CacheStats.html">CacheStats</a>
+  
+    <li><a href="../Character.html">Character</a>
+  
+    <li><a href="../Client.html">Client</a>
+  
+    <li><a href="../Cmd.html">Cmd</a>
+  
+    <li><a href="../ColorFilter.html">ColorFilter</a>
+  
+    <li><a href="../Command.html">Command</a>
+  
+    <li><a href="../Configuration.html">Configuration</a>
+  
+    <li><a href="../Connection.html">Connection</a>
+  
+    <li><a href="../Connector.html">Connector</a>
+  
+    <li><a href="../ConsoleClient.html">ConsoleClient</a>
+  
+    <li><a href="../CursesClient.html">CursesClient</a>
+  
+    <li><a href="../DbmStore.html">DbmStore</a>
+  
+    <li><a href="../DebugFilter.html">DebugFilter</a>
+  
+    <li><a href="../Dumper.html">Dumper</a>
+  
+    <li><a href="../Engine.html">Engine</a>
+  
+    <li><a href="../Event.html">Event</a>
+  
+    <li><a href="../EventManager.html">EventManager</a>
+  
+    <li><a href="../Exit.html">Exit</a>
+  
+    <li><a href="../Filter.html">Filter</a>
+  
+    <li><a href="../GameObject.html">GameObject</a>
+  
+    <li><a href="../GdbmStore.html">GdbmStore</a>
+  
+    <li><a href="../LineIO.html">LineIO</a>
+  
+    <li><a href="../Loader.html">Loader</a>
+  
+    <li><a href="../Log.html">Log</a>
+  
+    <li><a href="../Module.html">Module</a>
+  
+    <li><a href="../Obj.html">Obj</a>
+  
+    <li><a href="../ObjCmd.html">ObjCmd</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../PacketIO.html">PacketIO</a>
+  
+    <li><a href="../ProtocolStack.html">ProtocolStack</a>
+  
+    <li><a href="../Publisher.html">Publisher</a>
+  
+    <li><a href="../Reactor.html">Reactor</a>
+  
+    <li><a href="../Room.html">Room</a>
+  
+    <li><a href="../Root.html">Root</a>
+  
+    <li><a href="../Script.html">Script</a>
+  
+    <li><a href="../SdbmStore.html">SdbmStore</a>
+  
+    <li><a href="../Session.html">Session</a>
+  
+    <li><a href="../SockIO.html">SockIO</a>
+  
+    <li><a href="../Sqlite3Store.html">Sqlite3Store</a>
+  
+    <li><a href="../SqliteStore.html">SqliteStore</a>
+  
+    <li><a href="../Store.html">Store</a>
+  
+    <li><a href="../String.html">String</a>
+  
+    <li><a href="../TelnetCodes.html">TelnetCodes</a>
+  
+    <li><a href="../TelnetFilter.html">TelnetFilter</a>
+  
+    <li><a href="../TerminalFilter.html">TerminalFilter</a>
+  
+    <li><a href="../Timer.html">Timer</a>
+  
+    <li><a href="../Utility.html">Utility</a>
+  
+    <li><a href="../VT100Codes.html">VT100Codes</a>
+  
+    <li><a href="../World.html">World</a>
+  
+    <li><a href="../XmlStore.html">XmlStore</a>
+  
+    <li><a href="../YamlStore.html">YamlStore</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Farts::LocalVarSyntaxNode</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">( lineno, vname )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/farts/farts_parser.rb, line 714</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">lineno</span>, <span class="ruby-identifier">vname</span> )
+  <span class="ruby-keyword">super</span> <span class="ruby-identifier">lineno</span>
+  <span class="ruby-ivar">@vname</span> = <span class="ruby-identifier">vname</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-execute" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">execute</span><span
+            class="method-args">( intp )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="execute-source">
+            <pre><span class="ruby-comment"># File lib/farts/farts_parser.rb, line 719</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">execute</span>( <span class="ruby-identifier">intp</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">intp</span>.<span class="ruby-identifier">vars</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-ivar">@vname</span>)
+    <span class="ruby-identifier">intp</span>.<span class="ruby-identifier">vars</span>[<span class="ruby-ivar">@vname</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">fart_err</span>(<span class="ruby-node">&quot;unknown local variable '#{@vname}'&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- execute-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- execute-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

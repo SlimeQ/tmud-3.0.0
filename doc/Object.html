@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Object - TeensyMUD 3.0.0 Mud Server</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>tmud.rb
+    <li>tclient.rb
+    <li>lib/network/protocol/colorcodes.rb
+    <li>lib/storage/store.rb
+    <li>lib/utility/version.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">BasicObject
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-get_options">#get_options</a>
+    
+    <li><a href="#method-i-getkey">#getkey</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+    <li class="file"><a href="./TML.html">TML</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Farts.html">Farts</a>
+  
+    <li><a href="./Farts/AttributeSyntaxNode.html">Farts::AttributeSyntaxNode</a>
+  
+    <li><a href="./Farts/CallSyntaxNode.html">Farts::CallSyntaxNode</a>
+  
+    <li><a href="./Farts/CommandSyntaxNode.html">Farts::CommandSyntaxNode</a>
+  
+    <li><a href="./Farts/CommentSyntaxNode.html">Farts::CommentSyntaxNode</a>
+  
+    <li><a href="./Farts/EndSyntaxNode.html">Farts::EndSyntaxNode</a>
+  
+    <li><a href="./Farts/IfSyntaxNode.html">Farts::IfSyntaxNode</a>
+  
+    <li><a href="./Farts/Interpreter.html">Farts::Interpreter</a>
+  
+    <li><a href="./Farts/Lexer.html">Farts::Lexer</a>
+  
+    <li><a href="./Farts/Lib.html">Farts::Lib</a>
+  
+    <li><a href="./Farts/LiteralSyntaxNode.html">Farts::LiteralSyntaxNode</a>
+  
+    <li><a href="./Farts/LocalVarSyntaxNode.html">Farts::LocalVarSyntaxNode</a>
+  
+    <li><a href="./Farts/Parser.html">Farts::Parser</a>
+  
+    <li><a href="./Farts/ProgramSyntaxNode.html">Farts::ProgramSyntaxNode</a>
+  
+    <li><a href="./Farts/SyntaxNode.html">Farts::SyntaxNode</a>
+  
+    <li><a href="./SQLite.html">SQLite</a>
+  
+    <li><a href="./SQLite3.html">SQLite3</a>
+  
+    <li><a href="./SQLite3/Database.html">SQLite3::Database</a>
+  
+    <li><a href="./SQLite/Database.html">SQLite::Database</a>
+  
+    <li><a href="./TernaryTrie.html">TernaryTrie</a>
+  
+    <li><a href="./TernaryTrie/TNode.html">TernaryTrie::TNode</a>
+  
+    <li><a href="./ASCIICodes.html">ASCIICodes</a>
+  
+    <li><a href="./Acceptor.html">Acceptor</a>
+  
+    <li><a href="./Account.html">Account</a>
+  
+    <li><a href="./BoolExpParser.html">BoolExpParser</a>
+  
+    <li><a href="./CacheEntry.html">CacheEntry</a>
+  
+    <li><a href="./CacheManager.html">CacheManager</a>
+  
+    <li><a href="./CacheStats.html">CacheStats</a>
+  
+    <li><a href="./Character.html">Character</a>
+  
+    <li><a href="./Client.html">Client</a>
+  
+    <li><a href="./Cmd.html">Cmd</a>
+  
+    <li><a href="./ColorFilter.html">ColorFilter</a>
+  
+    <li><a href="./Command.html">Command</a>
+  
+    <li><a href="./Configuration.html">Configuration</a>
+  
+    <li><a href="./Connection.html">Connection</a>
+  
+    <li><a href="./Connector.html">Connector</a>
+  
+    <li><a href="./ConsoleClient.html">ConsoleClient</a>
+  
+    <li><a href="./CursesClient.html">CursesClient</a>
+  
+    <li><a href="./DbmStore.html">DbmStore</a>
+  
+    <li><a href="./DebugFilter.html">DebugFilter</a>
+  
+    <li><a href="./Dumper.html">Dumper</a>
+  
+    <li><a href="./Engine.html">Engine</a>
+  
+    <li><a href="./Event.html">Event</a>
+  
+    <li><a href="./EventManager.html">EventManager</a>
+  
+    <li><a href="./Exit.html">Exit</a>
+  
+    <li><a href="./Filter.html">Filter</a>
+  
+    <li><a href="./GameObject.html">GameObject</a>
+  
+    <li><a href="./GdbmStore.html">GdbmStore</a>
+  
+    <li><a href="./LineIO.html">LineIO</a>
+  
+    <li><a href="./Loader.html">Loader</a>
+  
+    <li><a href="./Log.html">Log</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Obj.html">Obj</a>
+  
+    <li><a href="./ObjCmd.html">ObjCmd</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./PacketIO.html">PacketIO</a>
+  
+    <li><a href="./ProtocolStack.html">ProtocolStack</a>
+  
+    <li><a href="./Publisher.html">Publisher</a>
+  
+    <li><a href="./Reactor.html">Reactor</a>
+  
+    <li><a href="./Room.html">Room</a>
+  
+    <li><a href="./Root.html">Root</a>
+  
+    <li><a href="./Script.html">Script</a>
+  
+    <li><a href="./SdbmStore.html">SdbmStore</a>
+  
+    <li><a href="./Session.html">Session</a>
+  
+    <li><a href="./SockIO.html">SockIO</a>
+  
+    <li><a href="./Sqlite3Store.html">Sqlite3Store</a>
+  
+    <li><a href="./SqliteStore.html">SqliteStore</a>
+  
+    <li><a href="./Store.html">Store</a>
+  
+    <li><a href="./String.html">String</a>
+  
+    <li><a href="./TelnetCodes.html">TelnetCodes</a>
+  
+    <li><a href="./TelnetFilter.html">TelnetFilter</a>
+  
+    <li><a href="./TerminalFilter.html">TerminalFilter</a>
+  
+    <li><a href="./Timer.html">Timer</a>
+  
+    <li><a href="./Utility.html">Utility</a>
+  
+    <li><a href="./VT100Codes.html">VT100Codes</a>
+  
+    <li><a href="./World.html">World</a>
+  
+    <li><a href="./XmlStore.html">XmlStore</a>
+  
+    <li><a href="./YamlStore.html">YamlStore</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Object</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="ANSICODE">ANSICODE
+        
+        <dd class="description">
+        
+      
+        <dt id="BANNER">BANNER
+        
+        <dd class="description">
+        
+      
+        <dt id="ColorTable">ColorTable
+        
+        <dd class="description"><dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>colors.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.8.0</p>
+</dd><dt>date
+<dd>
+<p>01/19/2006</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005, 2006 by Jon A. Lambert All rights
+reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+        
+      
+        <dt id="Getch">Getch
+        
+        <dd class="description">
+        
+      
+        <dt id="Kbhit">Kbhit
+        
+        <dd class="description">
+        
+      
+        <dt id="LOGO">LOGO
+        
+        <dd class="description"><p>Displayed upon connecting</p>
+        
+      
+        <dt id="MINIMAL_DB">MINIMAL_DB
+        
+        <dd class="description"><p>The minimal database will be used in the absence of detecting one.</p>
+        
+      
+        <dt id="Version">Version
+        
+        <dd class="description"><dl class="rdoc-list note-list"><dt>file
+<dd>
+<p>version.rb</p>
+</dd><dt>author
+<dd>
+<p>Jon A. Lambert</p>
+</dd><dt>version
+<dd>
+<p>2.9.0</p>
+</dd><dt>date
+<dd>
+<p>03/11/2006</p>
+</dd></dl>
+
+<p>This source code copyright (C) 2005, 2006 by Jon A. Lambert All rights
+reserved.</p>
+
+<p>Released under the terms of the TeensyMUD Public License See LICENSE file
+for additional information.</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-get_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_options</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Processes command line arguments</p>
+          
+
+          
+          <div class="method-source-code" id="get_options-source">
+            <pre><span class="ruby-comment"># File tmud.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_options</span>
+  <span class="ruby-comment"># parse options</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-comment"># The myopts specified on the command line will be collected in *myopts*.</span>
+    <span class="ruby-comment"># We set default values here.</span>
+    <span class="ruby-identifier">myopts</span> = {}
+
+    <span class="ruby-identifier">opts</span> = <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opts</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">banner</span> = <span class="ruby-constant">BANNER</span>
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-node">&quot;Usage: ruby #{$0} [options]&quot;</span>
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-p&quot;</span>, <span class="ruby-string">&quot;--port PORT&quot;</span>, <span class="ruby-constant">Integer</span>,
+        <span class="ruby-string">&quot;Select the port the mud will run on&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">port</span><span class="ruby-operator">|</span> <span class="ruby-identifier">myopts</span>[<span class="ruby-string">'server_port'</span>] = <span class="ruby-identifier">port</span>}
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-d&quot;</span>, <span class="ruby-string">&quot;--dbfile DBFILE&quot;</span>, <span class="ruby-constant">String</span>,
+        <span class="ruby-string">&quot;Select the name of the database file&quot;</span>,
+        <span class="ruby-string">&quot;  (default is 'db/world.yaml')&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">db</span><span class="ruby-operator">|</span> <span class="ruby-identifier">myopts</span>[<span class="ruby-string">'dbfile'</span>] = <span class="ruby-identifier">db</span>}
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-c&quot;</span>, <span class="ruby-string">&quot;--config CONFIGFILE&quot;</span>, <span class="ruby-constant">String</span>,
+        <span class="ruby-string">&quot;Select the name of the configuration file&quot;</span>,
+        <span class="ruby-string">&quot;  (default is 'config.yaml')&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">cfile</span><span class="ruby-operator">|</span> <span class="ruby-identifier">myopts</span>[<span class="ruby-string">'configfile'</span>] = <span class="ruby-identifier">cfile</span>}
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-l&quot;</span>, <span class="ruby-string">&quot;--logfile LOGFILE&quot;</span>, <span class="ruby-constant">String</span>,
+        <span class="ruby-string">&quot;Select the name of the log file&quot;</span>,
+        <span class="ruby-string">&quot;  (default is 'logs/server.log')&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">lfile</span><span class="ruby-operator">|</span> <span class="ruby-identifier">myopts</span>[<span class="ruby-string">'logfile'</span>] = <span class="ruby-identifier">lfile</span>}
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-h&quot;</span>, <span class="ruby-string">&quot;--home LOCATIONID&quot;</span>, <span class="ruby-constant">Integer</span>,
+        <span class="ruby-string">&quot;Select the object id where new characters will start&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">home</span><span class="ruby-operator">|</span> <span class="ruby-identifier">myopts</span>[<span class="ruby-string">'home'</span>] = <span class="ruby-identifier">home</span>}
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-t&quot;</span>, <span class="ruby-string">&quot;--[no-]trace&quot;</span>, <span class="ruby-string">&quot;Trace execution&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">myopts</span>[<span class="ruby-string">'trace'</span>] = <span class="ruby-identifier">t</span>}
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-v&quot;</span>, <span class="ruby-string">&quot;--[no-]verbose&quot;</span>, <span class="ruby-string">&quot;Run verbosely&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">myopts</span>[<span class="ruby-string">'verbose'</span>] = <span class="ruby-identifier">v</span>}
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on_tail</span>(<span class="ruby-string">&quot;-h&quot;</span>, <span class="ruby-string">&quot;--help&quot;</span>, <span class="ruby-string">&quot;Show this message&quot;</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">help</span>
+        <span class="ruby-identifier">exit</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on_tail</span>(<span class="ruby-string">&quot;--version&quot;</span>, <span class="ruby-string">&quot;Show version&quot;</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;TeensyMud #{Version}&quot;</span>
+        <span class="ruby-identifier">exit</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">parse!</span>(<span class="ruby-constant">ARGV</span>)
+
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">myopts</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseError</span>
+    <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;ERROR - #{$!}&quot;</span>
+    <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;For help...&quot;</span>
+    <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot; ruby #{$0} --help&quot;</span>
+    <span class="ruby-identifier">exit</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_options-method -->
+
+    
+      <div id="method-i-getkey" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getkey</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="getkey-source">
+            <pre><span class="ruby-comment"># File tclient.rb, line 327</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getkey</span>
+  <span class="ruby-identifier">sleep</span> <span class="ruby-value">0.01</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Kbhit</span>.<span class="ruby-identifier">call</span>.<span class="ruby-identifier">zero?</span>
+  <span class="ruby-identifier">c</span> = <span class="ruby-constant">Getch</span>.<span class="ruby-identifier">call</span>
+  <span class="ruby-identifier">c</span> = <span class="ruby-constant">Getch</span>.<span class="ruby-identifier">call</span> <span class="ruby-operator">+</span> <span class="ruby-value">256</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">==</span> <span class="ruby-value">0xE0</span>
+  <span class="ruby-identifier">c</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getkey-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getkey-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
